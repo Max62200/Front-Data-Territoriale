@@ -1,0 +1,16 @@
+.margin {
+    margin: 3%;
+    margin-left: 15%;
+    margin-right:15%
+}
+
+h1{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    margin: 1%;
+}
+
+.center{
+    margin-left: 42.5%;
+}

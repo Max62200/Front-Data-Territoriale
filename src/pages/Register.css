@@ -1,0 +1,11 @@
+h1{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    margin: 1%;
+}
+
+.form-group{
+    width: 375px;
+    text-align: center;
+}
