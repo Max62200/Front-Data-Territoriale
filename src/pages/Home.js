@@ -3,8 +3,8 @@ import Card from '../components/Commerce/Card';
 import axios from 'axios';
 import './Home.css';
 import Pagination from 'react-bootstrap/Pagination';
-import { Container } from 'react-bootstrap';
-
+import { Container, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 	// const [commerceData, setCommerceData] = useState([]);
@@ -78,20 +78,26 @@ const Home = () => {
 	return (
 		<>
 			<h1>Liste des commerces</h1>
+			<Link to='/addcommerce'>
+				<Button variant='secondary' className='btn-add'>
+					Ajouter Commerce
+				</Button>
+			</Link>
 			{data &&
 				data.map((item, key) => {
 					return <Card data={item} key={key} />;
 				})}
-			<Container >
-                <div className='center'>
-				<Pagination>
-					<Pagination.First />
-					<Pagination.Prev />
-					<Pagination.Item>{1}</Pagination.Item>
+			<Container>
+				<div className='center'>
+					<Pagination>
+						<Pagination.First />
+						<Pagination.Prev />
+						<Pagination.Item>{1}</Pagination.Item>
 
-					<Pagination.Next />
-					<Pagination.Last />
-				</Pagination></div>
+						<Pagination.Next />
+						<Pagination.Last />
+					</Pagination>
+				</div>
 			</Container>
 		</>
 	);

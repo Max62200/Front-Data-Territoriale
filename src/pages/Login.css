@@ -10,3 +10,27 @@
    
     }
   }
+
+  h1{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    margin: 1%;
+}
+
+.card-log{
+  width: 25em;
+}
+
+.Login{
+  display:flex;
+  justify-content:center;
+}
+
+.text-log{
+  font-size:17px;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+
+}

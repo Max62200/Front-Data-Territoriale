@@ -11,6 +11,9 @@ const NavbarTop = () => {
 					<Nav>
 						<Nav.Link href='/login'>Se connecter</Nav.Link>
 					</Nav>
+					<Nav>
+						<Nav.Link href='/showcompte'>Compte</Nav.Link>
+					</Nav>
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>

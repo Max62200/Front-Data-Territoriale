@@ -1,4 +1,4 @@
-import { Card, Button, Row, Col } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Card.css';
 
@@ -14,7 +14,7 @@ const card = ({ data }) => {
 					<Card.Text>{type}</Card.Text>
                     <Card.Text>{phone}</Card.Text>
                     <Card.Text>{address}</Card.Text>
-					<Link className='no-color' to='/show'><Button variant='primary'>Afficher plus</Button></Link>
+					<Link className='no-color' to='/showcommerce'><Button variant='primary'>Afficher plus</Button></Link>
 				</Card.Body>
 			</Card>
 		

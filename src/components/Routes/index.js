@@ -4,7 +4,12 @@ import Home from '../../pages/Home';
 import Login from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
 import Register from '../../pages/Register';
-import Show from '../../pages/Show';
+import Showcompte from '../../pages/Showcompte';
+import Showcommerce from '../../pages/Showcommerce';
+import Addcommerce from '../../pages/Addcommerce';
+import Updatecommerce from '../../pages/Updatecommerce';
+
+
 
 
 const index = () => {
@@ -16,7 +21,10 @@ const index = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="*" element={<NotFound />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/show" element={<Show />} />
+                <Route path="/showcompte" element={<Showcompte />} />
+                <Route path="/showcommerce" element={<Showcommerce />} />
+                <Route path="/addcommerce" element={<Addcommerce />} />
+                <Route path="/updatecommerce" element={<Updatecommerce />} />
             </Routes>
         </BrowserRouter>
     );

@@ -9,3 +9,20 @@ h1{
     width: 375px;
     text-align: center;
 }
+
+.card-log{
+    width: 25em;
+  }
+  
+  .Login{
+    display:flex;
+    justify-content:center;
+  }
+  
+  .text-log{
+    font-size:17px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+  
+  }
