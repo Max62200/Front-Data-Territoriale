@@ -1,20 +1,53 @@
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Offcanvas, Form, FormControl, Button } from 'react-bootstrap';
+import './NavbarTop.css';
 
 const NavbarTop = () => {
 	return (
-		<Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
-			<Container>
-				<Navbar.Brand href='/'>DATA TERRITORIALE</Navbar.Brand>
-				<Navbar.Toggle aria-controls='responsive-navbar-nav' />
-				<Navbar.Collapse id='responsive-navbar-nav'>
-					<Nav className='me-auto'></Nav>
-					<Nav>
-						<Nav.Link href='/login'>Se connecter</Nav.Link>
-					</Nav>
-					<Nav>
-						<Nav.Link href='/showcompte'>Compte</Nav.Link>
-					</Nav>
-				</Navbar.Collapse>
+		<Navbar
+			className='Navbar'
+			fixed='top'
+			collapseOnSelect
+			expand='lg'
+			bg='dark'
+			variant='dark'
+			expand={false}>
+			<Container fluid>
+				<Navbar.Brand className='brand' href='/'>
+					Data Territoriale
+				</Navbar.Brand>
+				<Navbar.Toggle className='brand2' aria-controls='offcanvasNavbar' />
+				<Navbar.Offcanvas
+					id='offcanvasNavbar'
+					aria-labelledby='offcanvasNavbarLabel'
+					placement='end'>
+					<Offcanvas.Header closeButton>
+						<Offcanvas.Title id='offcanvasNavbarLabel'>
+							Data Territoriale
+						</Offcanvas.Title>
+					</Offcanvas.Header>
+					<Offcanvas.Body>
+						<Nav className='justify-content-end flex-grow-1 pe-3'>
+							<Nav.Link className='link' href='/'>
+								Home
+							</Nav.Link>
+							<Nav.Link className='link' href='/login'>
+								Se connecter
+							</Nav.Link>
+							<Nav.Link className='link' href='/showcompte'>
+								Compte
+							</Nav.Link>
+						</Nav>
+						<Form className='d-flex'>
+							<FormControl
+								type='search'
+								placeholder=''
+								className='me-2'
+								aria-label='Search'
+							/>
+								<Button variant='outline-secondary' className='btn btn-sm btn-block'>Rechercher</Button>
+						</Form>
+					</Offcanvas.Body>
+				</Navbar.Offcanvas>
 			</Container>
 		</Navbar>
 	);

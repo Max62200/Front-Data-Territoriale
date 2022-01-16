@@ -2,3 +2,21 @@
     text-decoration: none;
     color: black;
 }
+.card{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 3%;
+    box-shadow: 2px 2px 2px 2px rgb(160, 159, 159);
+}
+
+@media screen and (max-width : 575px) and (min-width : 300px){
+
+
+    .card{
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 7%;
+        box-shadow: 2px 2px 2px 2px rgb(160, 159, 159);
+    }
+
+}

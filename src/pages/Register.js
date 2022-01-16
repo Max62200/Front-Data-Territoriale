@@ -5,11 +5,12 @@ import { Card } from 'react-bootstrap';
 const Register = () => {
 	return (
 		<div>
-			<h1>Inscription</h1>
+			<h1 className='H1'>Inscription</h1>
 			<div className='center'>
 				<form>
-					<Card className='card-log'>
+					<Card className='card-log '>
 						<Card.Body>
+							<div className='mg-6'>
 							<div className='form-group'>
 								<input type='text' className='form-control' placeholder='Nom' />
 							</div>
@@ -28,16 +29,17 @@ const Register = () => {
 									className='form-control'
 									placeholder='Password'
 								/>
+							</div></div>
+							<div className='center'>
+								<button type='submit' className='btn btn-primary btn-block mt-4 '>
+									S'inscrire
+								</button>
 							</div>
-
-							<button type='submit' className='btn btn-primary btn-block mt-4 center'>
-								S'inscrire
-							</button>
 						</Card.Body>
 					</Card>
 				</form>
 			</div>
-			<div className='img-next'>
+			<div className='img-next2'>
 				<Link to='/'>
 					<img src='/next.png' alt='next'></img>
 				</Link>

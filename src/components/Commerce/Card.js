@@ -3,21 +3,23 @@ import { Link } from 'react-router-dom';
 import './Card.css';
 
 const card = ({ data }) => {
-	const { name, type, phone, address } = data;
+	const { nom, typologie, telephone, email } = data;
 
 	return (
-		
-			<Card className='text-center margin'>
-				<Card.Header></Card.Header>
-				<Card.Body>
-					<Card.Title>{name}</Card.Title>
-					<Card.Text>{type}</Card.Text>
-                    <Card.Text>{phone}</Card.Text>
-                    <Card.Text>{address}</Card.Text>
-					<Link className='no-color' to='/showcommerce'><Button variant='primary'>Afficher plus</Button></Link>
-				</Card.Body>
-			</Card>
-		
+
+		<div className="card">
+		<Card className='text-center m-5'>
+			<Card.Header></Card.Header>
+			<Card.Body>
+				<Card.Title>{nom}</Card.Title>
+				<Card.Text>{typologie}</Card.Text>
+				<Card.Text>{telephone}</Card.Text>
+				<Card.Text>{email}</Card.Text>
+				<Link className='no-color' to='/showcommerce'>
+					<Button className='btn btn-sm' variant='primary'>Afficher plus</Button>
+				</Link>
+			</Card.Body>
+		</Card></div>
 	);
 };
 

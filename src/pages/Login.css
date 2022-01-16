@@ -25,6 +25,7 @@
 .Login{
   display:flex;
   justify-content:center;
+  margin-top: 10%;
 }
 
 .text-log{
@@ -34,3 +35,38 @@
   font-weight: bold;
 
 }
+
+@media screen and (max-width : 1500px) and (min-width : 992px){
+  .Login{
+    display:flex;
+    justify-content:center;
+    margin-top: 10%;
+  }
+}
+
+@media screen and (max-width : 991px) and (min-width : 768px){
+  .Login{
+    display:flex;
+    justify-content:center;
+    margin-top: 15%;
+  }
+}
+
+
+@media screen and (max-width : 767px) and (min-width : 576px){
+  .Login{
+    display:flex;
+    justify-content:center;
+    margin-top: 20%;
+  }
+}
+
+
+@media screen and (max-width : 575px) and (min-width : 300px){
+  .Login{
+    display:flex;
+    justify-content:center;
+    margin-top: 50%;
+  }
+}
+

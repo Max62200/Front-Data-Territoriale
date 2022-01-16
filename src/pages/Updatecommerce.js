@@ -1,15 +1,41 @@
 import './Updatecommerce.css';
-import { Form, Row, Col, Card } from 'react-bootstrap';
+import { Form, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
 const Updatecommerce = () => {
+	const [isVisible, setIsVisible] = useState(false);
+
+	// Top: 0 takes us all the way back to the top of the page
+	// Behavior: smooth keeps it smooth!
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	};
+
+	useEffect(() => {
+		// Button is displayed after scrolling for 500 pixels
+		const toggleVisibility = () => {
+			if (window.pageYOffset > 500) {
+				setIsVisible(true);
+			} else {
+				setIsVisible(false);
+			}
+		};
+
+		window.addEventListener('scroll', toggleVisibility);
+
+		return () => window.removeEventListener('scroll', toggleVisibility);
+	}, []);
 	return (
 		<div>
-			<h1>Modifier commerce</h1>
+			<h1>Modifier un commerce</h1>
 
 			<form className='mg-5'>
 				<Card className='text-center margin'>
-					<Card.Header className='title-form'>COMMERCE</Card.Header>
+					<Card.Header className='title-form2'>COMMERCE</Card.Header>
 					<Card.Body>
 						<Row className='mg-1'>
 							<Col>
@@ -18,56 +44,56 @@ const Updatecommerce = () => {
 										<div className='form-group'>
 											<input
 												type='text'
-												className='form-control'
+												className='form-control size'
 												placeholder='Nom'
 											/>
 										</div>
 										<div className='form-group'>
 											<input
 												type='text'
-												className='form-control'
+												className='form-control size'
 												placeholder='Numero'
 											/>
 										</div>
 										<div className='form-group'>
 											<input
 												type='text'
-												className='form-control'
+												className='form-control size'
 												placeholder='bis'
 											/>
 										</div>
 										<div className='form-group'>
 											<input
 												type='text'
-												className='form-control'
+												className='form-control size'
 												placeholder='voie'
 											/>
 										</div>
 										<div className='form-group'>
 											<input
 												type='text'
-												className='form-control'
+												className='form-control size'
 												placeholder='rue'
 											/>
 										</div>
 										<div className='form-group'>
 											<input
 												type='text'
-												className='form-control'
+												className='form-control size'
 												placeholder='complement'
 											/>
 										</div>
 										<div className='form-group'>
 											<input
 												type='text'
-												className='form-control'
+												className='form-control size'
 												placeholder='CP'
 											/>
 										</div>
 										<div className='form-group'>
 											<input
 												type='text'
-												className='form-control'
+												className='form-control size'
 												placeholder='Ville'
 											/>
 										</div>
@@ -76,42 +102,42 @@ const Updatecommerce = () => {
 										<div className='form-group'>
 											<input
 												type='text'
-												className='form-control'
+												className='form-control size'
 												placeholder='Latitude'
 											/>
 										</div>
 										<div className='form-group'>
 											<input
 												type='text'
-												className='form-control'
+												className='form-control size'
 												placeholder='Longitude'
 											/>
 										</div>
 										<div className='form-group'>
 											<input
 												type='email'
-												className='form-control'
+												className='form-control size'
 												placeholder='email'
 											/>
 										</div>
 										<div className='form-group'>
 											<input
 												type='text'
-												className='form-control'
+												className='form-control size'
 												placeholder='Telephone'
 											/>
 										</div>
 										<div className='form-group'>
 											<input
 												type='text'
-												className='form-control'
+												className='form-control size'
 												placeholder='FAX'
 											/>
 										</div>
 										<div className='form-group'>
 											<input
 												type='text'
-												className='form-control'
+												className='form-control size'
 												placeholder='Typologie'
 											/>
 										</div>
@@ -127,323 +153,330 @@ const Updatecommerce = () => {
 							</Col>
 						</Row>
 					</Card.Body>
-					<Card.Header className='title-form'>Horaires</Card.Header>
+					<Card.Header className='title-form2'>Horaires</Card.Header>
 					<Card.Body>
 						<Row>
 							<Col>
-								<Card.Body>
-									<Row>
-										<Col>
-											<div className='form-group'>
-												<Form.Label>lundi Matin</Form.Label>
-												<input
-													type='TIME'
-													className='form-control'
-													placeholder='Lundi Matin'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>lundi Midi</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Midi'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>lundi Aprem</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Aprem'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>lundi Soir</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Soir'
-												/>
-											</div>
-										</Col>
+								<div className='form-group size'>
+									<Form.Label>lundi Matin</Form.Label>
+									<input
+										type='TIME'
+										className='form-control size'
+										placeholder='Lundi Matin'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>lundi Midi</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Midi'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>lundi Aprem</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Aprem'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>lundi Soir</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Soir'
+									/>
+								</div>
+							</Col>
 
-										<Col>
-											<div className='form-group'>
-												<Form.Label>mardi Matin</Form.Label>
-												<input
-													type='TIME'
-													className='form-control'
-													placeholder='mardi Matin'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>mardi Midi</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='mardi Midi'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>mardi Aprem</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='mardi Aprem'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>Mardi Soir</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Mardi Soir'
-												/>
-											</div>
-										</Col>
-										<Col>
-											<div className='form-group'>
-												<Form.Label>Mercredi Matin</Form.Label>
-												<input
-													type='TIME'
-													className='form-control'
-													placeholder='Lundi Matin'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>Mercredi Midi</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Midi'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>Mercredi Aprem</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Aprem'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>Mercredi Soir</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Soir'
-												/>
-											</div>
-										</Col>
-									</Row>
-									<Row className='mt-5'>
-										<Col>
-											<div className='form-group'>
-												<Form.Label>Jeudi Matin</Form.Label>
-												<input
-													type='TIME'
-													className='form-control'
-													placeholder='Lundi Matin'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>Jeudi Midi</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Midi'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>Jeudi Aprem</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Aprem'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>Jeudi Soir</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Soir'
-												/>
-											</div>
-										</Col>
-
-										<Col>
-											<div className='form-group'>
-												<Form.Label>Vendredi Matin</Form.Label>
-												<input
-													type='TIME'
-													className='form-control'
-													placeholder='Lundi Matin'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>Vendredi Midi</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Midi'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>Vendredi Aprem</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Aprem'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>Vendredi Soir</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Soir'
-												/>
-											</div>
-										</Col>
-										<Col>
-											<div className='form-group'>
-												<Form.Label>Samedi Matin</Form.Label>
-												<input
-													type='TIME'
-													className='form-control'
-													placeholder='Lundi Matin'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>Samedi Midi</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Midi'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>Samedi Aprem</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Aprem'
-												/>
-											</div>
-											<div className='form-group'>
-												<Form.Label>Samedi Soir</Form.Label>
-												<input
-													type='time'
-													className='form-control'
-													placeholder='Lundi Soir'
-												/>
-											</div>
-										</Col>
-									</Row>
-									<div className='center mt-5 mg-3'>
-										<div className='form-group'>
-											<Form.Label>Dimanche Matin</Form.Label>
-											<input
-												type='TIME'
-												className='form-control'
-												placeholder='Lundi Matin'
-											/>
-										</div>
-										<div className='form-group'>
-											<Form.Label>Dimanche Midi</Form.Label>
-											<input
-												type='time'
-												className='form-control'
-												placeholder='Lundi Midi'
-											/>
-										</div>
-										<div className='form-group'>
-											<Form.Label>Dimanche Aprem</Form.Label>
-											<input
-												type='time'
-												className='form-control'
-												placeholder='Lundi Aprem'
-											/>
-										</div>
-										<div className='form-group'>
-											<Form.Label>Dimanche Soir</Form.Label>
-											<input
-												type='time'
-												className='form-control'
-												placeholder='Lundi Soir'
-											/>
-										</div>
-									</div>
-								</Card.Body>
+							<Col>
+								<div className='form-group size'>
+									<Form.Label>mardi Matin</Form.Label>
+									<input
+										type='TIME'
+										className='form-control size'
+										placeholder='mardi Matin'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>mardi Midi</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='mardi Midi'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>mardi Aprem</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='mardi Aprem'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>Mardi Soir</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Mardi Soir'
+									/>
+								</div>
+							</Col>
+							<Col>
+								<div className='form-group size'>
+									<Form.Label>Mercredi Matin</Form.Label>
+									<input
+										type='TIME'
+										className='form-control size'
+										placeholder='Lundi Matin'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>Mercredi Midi</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Midi'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>Mercredi Aprem</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Aprem'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>Mercredi Soir</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Soir'
+									/>
+								</div>
 							</Col>
 						</Row>
-						
-					</Card.Body>
-					<Card.Header className='title-form'>Informations</Card.Header>
-					<Card.Body>
-						<div className='center mt-3 mg-3'>
-							<div className='form-group'>
+						<Row className='mt-5'>
+							<Col>
+								<div className='form-group size'>
+									<Form.Label>Jeudi Matin</Form.Label>
+									<input
+										type='TIME'
+										className='form-control size'
+										placeholder='Lundi Matin'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>Jeudi Midi</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Midi'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>Jeudi Aprem</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Aprem'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>Jeudi Soir</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Soir'
+									/>
+								</div>
+							</Col>
+
+							<Col>
+								<div className='form-group size'>
+									<Form.Label>Vendredi Matin</Form.Label>
+									<input
+										type='TIME'
+										className='form-control size'
+										placeholder='Lundi Matin'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>Vendredi Midi</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Midi'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>Vendredi Aprem</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Aprem'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>Vendredi Soir</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Soir'
+									/>
+								</div>
+							</Col>
+							<Col>
+								<div className='form-group size'>
+									<Form.Label>Samedi Matin</Form.Label>
+									<input
+										type='TIME'
+										className='form-control size'
+										placeholder='Lundi Matin'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>Samedi Midi</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Midi'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>Samedi Aprem</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Aprem'
+									/>
+								</div>
+								<div className='form-group size'>
+									<Form.Label>Samedi Soir</Form.Label>
+									<input
+										type='time'
+										className='form-control size'
+										placeholder='Lundi Soir'
+									/>
+								</div>
+							</Col>
+						</Row>
+						<div className=' mt-5'>
+							<div className='form-group size'>
+								<Form.Label>Dimanche Matin</Form.Label>
 								<input
-									type='text'
-									className='form-control'
-									placeholder='Date de Création'
+									type='TIME'
+									className='form-control size'
+									placeholder='Lundi Matin'
 								/>
 							</div>
-							<div className='form-group'>
+							<div className='form-group size'>
+								<Form.Label>Dimanche Midi</Form.Label>
 								<input
-									type='text'
-									className='form-control'
-									placeholder='Raison Sociale'
+									type='time'
+									className='form-control size'
+									placeholder='Lundi Midi'
 								/>
 							</div>
-							<div className='form-group'>
-								<input type='text' className='form-control' placeholder='Statut' />
+							<div className='form-group size'>
+								<Form.Label>Dimanche Aprem</Form.Label>
+								<input
+									type='time'
+									className='form-control size'
+									placeholder='Lundi Aprem'
+								/>
 							</div>
-							<div className='form-group'>
-								<input type='text' className='form-control' placeholder='Siret' />
-							</div>
-							<div className='form-group'>
-								<input type='text' className='form-control' placeholder='Siren' />
+							<div className='form-group size'>
+								<Form.Label>Dimanche Soir</Form.Label>
+								<input
+									type='time'
+									className='form-control size'
+									placeholder='Lundi Soir'
+								/>
 							</div>
 						</div>
 					</Card.Body>
-					<Card.Header className='title-form'>Gérant</Card.Header>
+					<Card.Header className='title-form2'> Informations</Card.Header>
 					<Card.Body>
-						<Row>
-							<Col>
+						<div className='position'>
+							<div className=' mt-3'>
 								<div className='form-group'>
-									<input type='text' className='form-control' placeholder='Nom' />
+									<input
+										type='text'
+										className='form-control size'
+										placeholder='Date de Création'
+									/>
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
+										placeholder='Raison Sociale'
+									/>
+								</div>
+								<div className='form-group'>
+									<input
+										type='text'
+										className='form-control size'
+										placeholder='Statut'
+									/>
+								</div>
+								<div className='form-group'>
+									<input
+										type='text'
+										className='form-control size'
+										placeholder='Siret'
+									/>
+								</div>
+								<div className='form-group'>
+									<input
+										type='text'
+										className='form-control size'
+										placeholder='Siren'
+									/>
+								</div>
+							</div>
+						</div>
+					</Card.Body>
+					<Card.Header className='title-form2'>Gérant</Card.Header>
+					<Card.Body>
+						<Row>
+							<Col>
+								<div className='form-group'>
+									<input type='text' className='form-control size' placeholder='Nom' />
+								</div>
+								<div className='form-group'>
+									<input
+										type='text'
+										className='form-control size'
 										placeholder='Prenom'
 									/>
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Email'
 									/>
 								</div>
 								<div className='form-group'>
-									<input type='text' className='form-control' placeholder='Bis' />
+									<input type='text' className='form-control size' placeholder='Bis' />
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Voie'
 									/>
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Ville'
 									/>
 								</div>
@@ -452,75 +485,75 @@ const Updatecommerce = () => {
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Telephone Fixe'
 									/>
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Telephone Port'
 									/>
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Numero'
 									/>
 								</div>
 								<div className='form-group'>
-									<input type='text' className='form-control' placeholder='Rue' />
+									<input type='text' className='form-control size' placeholder='Rue' />
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Complement'
 									/>
 								</div>
 								<div className='form-group'>
-									<input type='text' className='form-control' placeholder='CP' />
+									<input type='text' className='form-control size' placeholder='CP' />
 								</div>
 							</Col>
 						</Row>
 					</Card.Body>
-					<Card.Header className='title-form'>Propriétaire</Card.Header>
+					<Card.Header className='title-form2'>Propriétaire</Card.Header>
 					<Card.Body>
 						<Row>
 							<Col>
 								<div className='form-group'>
-									<input type='text' className='form-control' placeholder='Nom' />
+									<input type='text' className='form-control size' placeholder='Nom' />
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Prenom'
 									/>
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Email'
 									/>
 								</div>
 								<div className='form-group'>
-									<input type='text' className='form-control' placeholder='Bis' />
+									<input type='text' className='form-control size' placeholder='Bis' />
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Voie'
 									/>
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Ville'
 									/>
 								</div>
@@ -529,62 +562,62 @@ const Updatecommerce = () => {
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Telephone Fixe'
 									/>
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Telephone Port'
 									/>
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Numero'
 									/>
 								</div>
 								<div className='form-group'>
-									<input type='text' className='form-control' placeholder='Rue' />
+									<input type='text' className='form-control size' placeholder='Rue' />
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Complement'
 									/>
 								</div>
 								<div className='form-group'>
-									<input type='text' className='form-control' placeholder='CP' />
+									<input type='text' className='form-control size' placeholder='CP' />
 								</div>
 							</Col>
 						</Row>
 					</Card.Body>
-					<Card.Header className='title-form'>Comptabilité</Card.Header>
+					<Card.Header className='title-form2'> Comptabilité</Card.Header>
 					<Card.Body>
 						<Row>
 							<Col>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Chiffres d affaires N-1'
 									/>
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Chiffres d affaires N-2'
 									/>
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Chiffres d affaires N-3'
 									/>
 								</div>
@@ -593,18 +626,18 @@ const Updatecommerce = () => {
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Employés'
 									/>
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
-										className='form-control'
+										className='form-control size'
 										placeholder='Superficie'
 									/>
 								</div>
-								<div className='form-group'>
+								<div className='form-group size mt-2 mb-3'>
 									<Form.Label>Franchise</Form.Label>
 									<Form.Select>
 										<option>oui</option>
@@ -613,8 +646,8 @@ const Updatecommerce = () => {
 								</div>
 							</Col>
 
-							<div className='form-group'>
-								<Form.Control
+							<div className='form-group '>
+								<Form.Control className='size'
 									as='textarea'
 									placeholder='Ecrivez un commentaire'
 									style={{ height: '150px' }}
@@ -623,15 +656,23 @@ const Updatecommerce = () => {
 						</Row>
 					</Card.Body>
 				</Card>
-				<button type='submit' className='btn btn-primary center btn-block mt-4'>
-					Modifier Commerce
-				</button>
+				<div className='center'>
+				<Button variant='primary' className='btn btn-sm btn-block mt-4'>
+						Modifier Commerce
+					</Button>
+				</div>
 			</form>
-
 			<div className='img-next'>
 				<Link to='/'>
-					<img src='/next.png' alt='next'></img>
+					<img className='img-2' src='/next.png' alt='next'></img>
 				</Link>
+			</div>
+			<div className='scroll-to-top'>
+				{isVisible && (
+					<div onClick={scrollToTop} className='btn-top'>
+						<img className='img' src='/arrow.png' alt='arrow'></img>
+					</div>
+				)}
 			</div>
 		</div>
 	);

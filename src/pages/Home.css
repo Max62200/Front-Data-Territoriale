@@ -12,11 +12,70 @@ h1{
 }
 
 .center{
-    margin-left: 42.5%;
+    display: flex;
+    justify-content:center;
 }
 
-.btn-add{
-    margin-left:85%;
-    margin-top: 1%;
-    margin-bottom: 1%;
+.right{
+    display: flex;
+    justify-content:right;
+    margin: 2%;
 }
+
+.btn-top{
+    display: flex;
+    justify-content: left;    
+    margin: 1%;
+    margin-top:-8%;
+}
+
+.btn-top:hover{
+    opacity: 0.6;
+    
+}
+
+
+@media screen and (max-width : 1500px) and (min-width : 992px){
+    .right{
+        display: flex;
+        justify-content:right;
+        margin:7.5%;
+        
+    }
+    
+  }
+  
+  @media screen and (max-width : 991px) and (min-width : 768px){
+    .right{
+        display: flex;
+        justify-content:right;
+        margin: 10%;
+    }
+  }
+  
+  
+  @media screen and (max-width : 767px) and (min-width : 576px){
+    .right{
+        display: flex;
+        justify-content:right;
+        margin:15%;
+    }
+  }
+  
+  
+  @media screen and (max-width : 575px) and (min-width : 300px){
+    .right{
+        display: flex;
+        justify-content:center;
+        margin-top: 25%;
+    }
+
+    .img{
+      width: 12.5%; 
+     justify-content:center;
+        
+    }
+    
+    
+    
+  }

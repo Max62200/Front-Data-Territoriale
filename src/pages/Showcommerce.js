@@ -1,15 +1,43 @@
 import { Card, Table, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Showcommerce.css';
+import React, { useEffect, useState } from 'react';
 
 const Showcommerce = () => {
+	const [isVisible, setIsVisible] = useState(false);
+
+	// Top: 0 takes us all the way back to the top of the page
+	// Behavior: smooth keeps it smooth!
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	};
+
+	useEffect(() => {
+		// Button is displayed after scrolling for 500 pixels
+		const toggleVisibility = () => {
+			if (window.pageYOffset > 500) {
+				setIsVisible(true);
+			} else {
+				setIsVisible(false);
+			}
+		};
+
+		window.addEventListener('scroll', toggleVisibility);
+
+		return () => window.removeEventListener('scroll', toggleVisibility);
+	}, []);
 	return (
 		<>
-			<Link to='/updatecommerce'>
-				<Button variant='success' className='btn-add'>
-					Modifier Commerce
-				</Button>
-			</Link>
+			<div className='btn-update'>
+				<Link to='/updatecommerce'>
+					<Button variant='outline-secondary' className='btn btn-sm'>
+						Modifier Commerce
+					</Button>
+				</Link>
+			</div>
 			<Card className='text-center margin'>
 				<Card.Header className='title-form'>NOM COMMERCE</Card.Header>
 				<Card.Body>
@@ -29,7 +57,7 @@ const Showcommerce = () => {
 					</Row>
 					<Card.Header className='title-form'>Horaires COMMERCE</Card.Header>
 					<Card.Text>
-						<Table striped bordered hover>
+						<Table responsive striped bordered hover>
 							<thead>
 								<tr>
 									<th>Jour</th>
@@ -153,7 +181,16 @@ const Showcommerce = () => {
 				</Card.Body>
 			</Card>
 			<div className='img-next'>
-				<Link to='/'><img src='/next.png' alt='next'></img></Link> 
+				<Link to='/'>
+					<img className='img-2' src='/next.png' alt='next'></img>
+				</Link>
+			</div>
+			<div className='scroll-to-top'>
+				{isVisible && (
+					<div onClick={scrollToTop} className='btn-top'>
+						<img className='img' src='/arrow.png' alt='arrow'></img>
+					</div>
+				)}
 			</div>
 		</>
 	);
