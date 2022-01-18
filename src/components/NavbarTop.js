@@ -7,10 +7,9 @@ const NavbarTop = () => {
 			className='Navbar'
 			fixed='top'
 			collapseOnSelect
-			expand='lg'
+			expand='lg, {false}'
 			bg='dark'
-			variant='dark'
-			expand={false}>
+			variant='dark'>
 			<Container fluid>
 				<Navbar.Brand className='brand' href='/'>
 					Data Territoriale
@@ -44,7 +43,9 @@ const NavbarTop = () => {
 								className='me-2'
 								aria-label='Search'
 							/>
-								<Button variant='outline-secondary' className='btn btn-sm btn-block'>Rechercher</Button>
+							<Button variant='outline-secondary' className='btn btn-sm btn-block'>
+								Rechercher
+							</Button>
 						</Form>
 					</Offcanvas.Body>
 				</Navbar.Offcanvas>

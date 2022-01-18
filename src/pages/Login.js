@@ -32,7 +32,7 @@ export default function Login() {
 						/>
 					</Form.Group>
 					<Form.Group size='lg' controlId='password'>
-						<Form.Label>Password</Form.Label>
+						<Form.Label>Mot de passe</Form.Label>
 						<Form.Control
 							type='password'
 							value={password}
@@ -45,7 +45,7 @@ export default function Login() {
 						className='center mt-4'
 						type='submit'
 						disabled={!validateForm()}>
-						Login
+						Se connecter
 					</Button>
 				</Form>
 				<p className='mt-4 text-log'>

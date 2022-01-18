@@ -25,7 +25,7 @@ const Showcompte = () => {
 							MaximeD@gmail.com
 						</Card.Subtitle>
 						<div className='center'>
-							<Button variant='primary' onClick={handleShow}>
+							<Button variant='outline-primary' className='size' onClick={handleShow}>
 								Modifier
 							</Button>
 						
@@ -38,7 +38,7 @@ const Showcompte = () => {
 									<div className='form-group'>
 										<input
 											type='text'
-											className='form-control'
+											className='form-control size'
 											placeholder='Nom'
 										/>
 									</div>
@@ -46,7 +46,7 @@ const Showcompte = () => {
 									<div className='form-group'>
 										<input
 											type='text'
-											className='form-control'
+											className='form-control size'
 											placeholder='Prenom'
 										/>
 									</div>
@@ -54,7 +54,7 @@ const Showcompte = () => {
 									<div className='form-group'>
 										<input
 											type='email'
-											className='form-control'
+											className='form-control size' 
 											placeholder='Email'
 										/>
 									</div>
@@ -62,22 +62,22 @@ const Showcompte = () => {
 									<div className='form-group'>
 										<input
 											type='password'
-											className='form-control'
+											className='form-control size'
 											placeholder='Password'
 										/>
 									</div>
 								</form>
 							</Modal.Body>
 							<Modal.Footer>
-								<Button variant='secondary' onClick={handleClose}>
+								<Button variant='secondary' className='size' onClick={handleClose}>
 									Fermer
 								</Button>
-								<Button variant='success' onClick={handleClose}>
+								<Button variant='success' className='size' onClick={handleClose}>
 									Sauvegarder
 								</Button>
 							</Modal.Footer>
 						</Modal>
-						<Button variant='danger' onClick={handleShow2}>
+						<Button variant='outline-danger' className='size' onClick={handleShow2}>
 							Supprimer
 						</Button></div>
 						<Modal show={show2} onHide={handleClose2}>
@@ -86,10 +86,10 @@ const Showcompte = () => {
 							</Modal.Header>
 							<Modal.Body>Voulez vous vraiment suprrimer le compte?</Modal.Body>
 							<Modal.Footer>
-								<Button variant='secondary' onClick={handleClose2}>
+								<Button variant='secondary' className='size' onClick={handleClose2}>
 									Fermer
 								</Button>
-								<Button variant='danger' onClick={handleClose2}>
+								<Button variant='danger' className='size' onClick={handleClose2}>
 									Supprimer
 								</Button>
 							</Modal.Footer>
@@ -97,7 +97,7 @@ const Showcompte = () => {
 					</Card.Body>
 					<div className='btn-back'>
 						<Link to='/'>
-							<Button variant='outline-secondary' className='btn btn-sm'>
+							<Button variant='secondary' className='btn btn-sm'>
 								Retour
 							</Button>
 						</Link>

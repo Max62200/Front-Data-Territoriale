@@ -7,16 +7,16 @@ import { Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-	// const [commerceData, setcommerceData] = useState([]);
+	const [commerceData, setCommerceData] = useState([]);
 
-	// useEffect(() => {
-	// 	const fetchCommerce = async () => {
-	// 		const res = await axios.get(`${process.env.REACT_APP_API_URL}/commerces`);
-	// 		console.log(res.data);
-	// 		setcommerceData(res.data);
-	// 	};
-	// 	fetchCommerce();
-	// }, []);
+	useEffect(() => {
+		const fetchCommerce = async () => {
+			const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/commerces`);
+
+			setCommerceData(res.data['hydra:member']);
+		};
+		fetchCommerce();
+	}, []);
 
 	const [isVisible, setIsVisible] = useState(false);
 
@@ -44,77 +44,19 @@ const Home = () => {
 		return () => window.removeEventListener('scroll', toggleVisibility);
 	}, []);
 
-
-	const data = [
-		{
-			nom: 'CHEZ LUDO',
-			typologie: 'RESTAURANT',
-			telephone: '0685858585',
-			email: '18 rue des mouettes Boulogne sur mer',
-		},
-		{
-			nom: 'CHEZ SIMON',
-			typologie: 'RESTAURANT',
-			telephone: '0685858585',
-			email: '18 rue des mouettes Boulogne sur mer',
-		},
-		{
-			nom: 'CHEZ MAXENCE',
-			typologie: 'RESTAURANT',
-			telephone: '0685858585',
-			email: '18 rue des mouettes Boulogne sur mer',
-		},
-		{
-			nom: 'CHEZ ANTOINE',
-			typologie: 'RESTAURANT',
-			telephone: '0685858585',
-			email: '18 rue des mouettes Boulogne sur mer',
-		},
-		{
-			nom: 'CHEZ LA TRUFFE',
-			typologie: 'RESTAURANT',
-			telephone: '0685858585',
-			email: '18 rue des mouettes Boulogne sur mer',
-		},
-		{
-			nom: 'CHEZ SANS CHAISE',
-			typologie: 'RESTAURANT',
-			telephone: '0685858585',
-			email: '18 rue des mouettes Boulogne sur mer',
-		},
-		{
-			nom: 'CHEZ BOL',
-			typologie: 'RESTAURANT',
-			telephone: '0685858585',
-			email: '18 rue des mouettes Boulogne sur mer',
-		},
-		{
-			nom: 'CHEZ TONY',
-			typologie: 'RESTAURANT',
-			telephone: '0685858585',
-			email: '18 rue des mouettes Boulogne sur mer',
-		},
-		{
-			nom: 'CHEZ LA FOUINE',
-			typologie: 'RESTAURANT',
-			telephone: '0685858585',
-			email: '18 rue des mouettes Boulogne sur mer',
-		},
-	];
-
 	return (
 		<>
 			<h1>Liste des commerces</h1>
-			<div className="right">
+			<div className='right'>
 				<Link to='/addcommerce'>
 					<Button variant='outline-secondary' className='btn btn-sm'>
 						Ajouter Commerce
 					</Button>
 				</Link>
 			</div>
-			{data &&
-				data.map((item, key) => {
-					return <Card data={item} key={key} />;
+			{commerceData &&
+				commerceData.map((item, key) => {
+					return <Card commerceData={item} key={key} />;
 				})}
 			<Container>
 				<div className='center'>

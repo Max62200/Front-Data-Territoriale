@@ -10,28 +10,41 @@ const Register = () => {
 				<form>
 					<Card className='card-log '>
 						<Card.Body>
-							<div className='mg-6'>
-							<div className='form-group'>
-								<input type='text' className='form-control' placeholder='Nom' />
-							</div>
+							<div className=''>
+								<div className='form-group'>
+									<input
+										type='text'
+										className='form-control size'
+										placeholder='Nom'
+									/>
+								</div>
 
-							<div className='form-group'>
-								<input type='text' className='form-control' placeholder='Prenom' />
-							</div>
+								<div className='form-group'>
+									<input
+										type='text'
+										className='form-control size'
+										placeholder='Prenom'
+									/>
+								</div>
 
-							<div className='form-group'>
-								<input type='email' className='form-control' placeholder='Email' />
-							</div>
+								<div className='form-group'>
+									<input
+										type='email'
+										className='form-control size'
+										placeholder='Email'
+									/>
+								</div>
 
-							<div className='form-group'>
-								<input
-									type='password'
-									className='form-control'
-									placeholder='Password'
-								/>
-							</div></div>
+								<div className='form-group'>
+									<input
+										type='password'
+										className='form-control size'
+										placeholder='Password'
+									/>
+								</div>
+							</div>
 							<div className='center'>
-								<button type='submit' className='btn btn-primary btn-block mt-4 '>
+								<button type='submit' className='size btn btn-primary btn-block mt-4 '>
 									S'inscrire
 								</button>
 							</div>
@@ -41,7 +54,7 @@ const Register = () => {
 			</div>
 			<div className='img-next2'>
 				<Link to='/'>
-					<img src='/next.png' alt='next'></img>
+					<img className='size2' src='/next.png' alt='next'></img>
 				</Link>
 			</div>
 		</div>
