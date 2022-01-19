@@ -4,10 +4,10 @@ import { Card } from 'react-bootstrap';
 
 const Register = () => {
 	return (
-		<div>
+		<div className="merge22">
 			<h1 className='H1'>Inscription</h1>
 			<div className='center'>
-				<form>
+				<form className='merge33'>
 					<Card className='card-log '>
 						<Card.Body>
 							<div className=''>

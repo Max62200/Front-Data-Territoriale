@@ -5,7 +5,7 @@ h1{
     font-family : Roboto;
     text-transform: uppercase;
     margin: 1%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     font-weight: bold;
 }
 
@@ -18,10 +18,12 @@ h1{
     
 }
 
-.cardB{
-    padding:1%
+    
+.merg{
+    margin-top:5%;
+    margin-bottom: 3%;
+   
 }
-
 .bd{
     border:2px solid black;
 }
@@ -38,7 +40,7 @@ h1{
 }
 
 .mt5{
-    margin-top: 15%;
+    margin-top: 7%;
 }
 
 .btn-top{
@@ -94,7 +96,7 @@ h1{
         height:150px;
     }
 .mt5{
-    margin-top: 15%;
+    margin-top: 10%;
 }
 }
 @media screen and (max-width : 850px) and (min-width : 576px){
@@ -204,6 +206,13 @@ h1{
 
  .next{
     margin-left:50%;
+}
+
+    
+.merg{
+    margin-top:35%;
+    margin-bottom: 7%;
+   
 }
 }
 

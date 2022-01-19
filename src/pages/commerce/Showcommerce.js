@@ -1,4 +1,4 @@
-import { Card, Table, Row, Col, Button, Form, Spinner } from 'react-bootstrap';
+import { Card, Table, Row, Col, Button, Form, Spinner, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../commerce/Showcommerce.css';
 import React, { useEffect, useState } from 'react';
@@ -25,6 +25,10 @@ const Showcommerce = () => {
 	const [proprietaireData, setProprietaireData] = useState(null);
 	const comptabiliteId = useParams()?.id;
 	const [comptabiliteData, setComptabiliteData] = useState(null);
+	const [show3, setShow3] = useState(false);
+
+	const handleClose3 = () => setShow3(false);
+	const handleShow3 = () => setShow3(true);
 
 	useEffect(() => {
 		const fetchCommerce = async () => {
@@ -697,6 +701,26 @@ const Showcommerce = () => {
 							)}
 						</Card.Body>
 					</Card>
+					<div className='center'>
+						<Button variant='danger' className='btn btn-sm' onClick={handleShow3}>
+							Supprimer
+						</Button>
+					</div>
+
+					<Modal show={show3} onHide={handleClose3}>
+						<Modal.Header closeButton>
+							<Modal.Title>Supprimer</Modal.Title>
+						</Modal.Header>
+						<Modal.Body>Voulez-vous supprimer le Commerce ?</Modal.Body>
+						<Modal.Footer>
+							<Button variant='secondary' onClick={handleClose3}>
+								Fermer
+							</Button>
+							<Button variant='danger' onClick={handleClose3}>
+								Supprimer
+							</Button>
+						</Modal.Footer>
+					</Modal>
 					<div className='df'>
 						<div>
 							{isVisible && (

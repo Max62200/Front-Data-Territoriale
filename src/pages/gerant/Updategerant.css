@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,700;1,300;1,500&display=swap');
 
-h1{
+.H1{
     text-align: center;
     font-family : Roboto;
     text-transform: uppercase;
@@ -37,9 +37,9 @@ h1{
     height:150px;
 }
 
-.merg{
-    margin-top: 10%;
-    margin-bottom: 7%;
+.merg66{
+    margin-top: 7%;
+    margin-bottom:1%;
    
 }
 
@@ -96,11 +96,12 @@ h1{
         height:150px;
     }
 
-    .merg{
-        margin-top: 15%;
-        margin-bottom: 7%;
-       
-    }
+    
+.merg66{
+    margin-top: 7%;
+    margin-bottom:1%;
+   
+}
 
 }
 @media screen and (max-width : 850px) and (min-width : 576px){
@@ -144,7 +145,7 @@ h1{
     }
 
     
-    .merg{
+    .merg66{
         margin-top: 20%;
         margin-bottom: 7%;
        
@@ -197,7 +198,7 @@ h1{
     }
 
     
-    .merg{
+    .merg66{
         margin-top:35%;
         margin-bottom: 7%;
        

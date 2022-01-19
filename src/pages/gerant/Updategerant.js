@@ -30,11 +30,11 @@ const Updategerant = () => {
 		return () => window.removeEventListener('scroll', toggleVisibility);
 	}, []);
 	return (
-		<div className='merg'>
-			<h1>Modifier un gérant</h1>
+		<div className='merg66'>
+			<h1 className='H1'> Modifier un gérant</h1>
 
 			<form className=''>
-				<Card className='text-center bd cardB'>
+				<Card className='text-center bd merg'>
 										
 					<Card.Header className='title-form2'>Gérant</Card.Header>
 					<Card.Body>

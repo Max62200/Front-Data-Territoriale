@@ -29,7 +29,7 @@ const card3 = ({ proprietaireData }) => {
 						<Card.Text className='write2'> 0{telport}</Card.Text>
 					</Col>
 				</Row>
-				<Link to={`/showgerant/${id}`}>
+				<Link to={`/showproprietaire/${id}`}>
 					<Button className='btn btn-sm' variant='primary'>
 						Afficher plus
 					</Button>

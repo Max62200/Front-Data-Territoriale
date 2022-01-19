@@ -15,8 +15,8 @@ const Showcompte = () => {
 	const handleShow2 = () => setShow2(true);
 
 	return (
-		<div>
-			<h1 className='h1'>Informations du compte</h1>
+		<div className="merge22">
+			<h1 className='H11'>Informations du compte</h1>
 			<div className='card-show center'>
 				<Card className='card-width'>
 					<Card.Body>

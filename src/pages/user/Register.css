@@ -14,7 +14,6 @@
 
 .card-log{
     width: 25em;
-    margin-left: -3%;
   }
   
   .Login{
@@ -40,7 +39,13 @@
 .mg-6{
   margin-left: 8%;
   margin-top: 8%;
-}}
+}
+
+.merge33{
+  margin-left:-7.5%;
+}
+
+}
 
 @media screen and (max-width : 1500px) and (min-width : 851px){
   .H1{
@@ -131,6 +136,11 @@
 .size{
   font-size:15px;
 }
+
+.merge33{
+  margin-left:-15%;
+}
+
 
 }
 

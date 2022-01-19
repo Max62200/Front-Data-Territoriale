@@ -17,7 +17,7 @@
     height:150px;
     margin-top: -8%;
 }
-.cb{
+.c4{
     margin-top:10%;
 }
 .title-form{
@@ -247,6 +247,9 @@
         height:150px;
     }
     
+.c4{
+    margin-top:30%;
+}
     
 }
 @media screen and (max-width : 850px) and (min-width : 576px){
@@ -349,6 +352,11 @@
         width:150px;
         height:150px;
     }
+
+    
+.c4{
+    margin-top:35%;
+}
 }
 
 
@@ -480,6 +488,10 @@
     width:150px;
     height:150px;
     
+}
+
+.c4{
+    margin-top:45%;
 }
     }
 

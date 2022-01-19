@@ -34,7 +34,7 @@ const Updateproprietaire = () => {
 			<h1>Modifier un proprietaire</h1>
 
 			<form className=''>
-				<Card className='text-center bd cardB'>
+				<Card className='text-center bd merg'>
 										
 					<Card.Header className='title-form2'>Proprietaire</Card.Header>
 					<Card.Body>

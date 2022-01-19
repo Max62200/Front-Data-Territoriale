@@ -54,15 +54,16 @@ const Showproprietaire = () => {
 		<>
 			{proprietaireData ? (
 				<>
-					<Card className='bd cb'>
-						<Card.Body className='mb-5 '>
-							{proprietaireData && (
-								<>
-									<Card.Header className='title-form text-center'>
-										{' '}
-										Proprietaire 
-									</Card.Header>
-									<Row className='text mb-2'>
+				<div className='c4 '>
+						<Card className='bd'>
+							<Card.Body className='mb-5 '>
+								{proprietaireData && (
+									<>
+										<Card.Header className='title-form text-center'>
+											{' '}
+											Prorietaire COMMERCE
+										</Card.Header>
+									<Row className=' mb-2'>
 										<Col className=' ml-1'>
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
@@ -148,12 +149,12 @@ const Showproprietaire = () => {
 										<div>
 											<Link to='/updateproprietaire'>
 												<Button variant='warning' className='btn btn-sm'>
-													Modifier proprietaire
+													Modifier 
 												</Button>
 											</Link>
 										</div>
 										<div>
-											<Button variant='danger' onClick={handleShow2}>
+											<Button variant='danger' className='btn btn-sm' onClick={handleShow2}>
 												Supprimer
 											</Button>
 										</div>
@@ -175,19 +176,20 @@ const Showproprietaire = () => {
 								</>
 							)}
 						</Card.Body>
-					</Card>
-					<div className='df'>
-						<div>
-							{isVisible && (
-								<div onClick={scrollToTop} className=''>
-									<img className='arrow' src='/arrow.png' alt='arrow'></img>
-								</div>
-							)}
-						</div>
-						<div className=''>
-							<Link to='/'>
-								<img className='next' src='/next.png' alt='next'></img>
-							</Link>
+						</Card>
+						<div className='df'>
+							<div>
+								{isVisible && (
+									<div onClick={scrollToTop} className=''>
+										<img className='arrow' src='/arrow.png' alt='arrow'></img>
+									</div>
+								)}
+							</div>
+							<div className=''>
+								<Link to='/'>
+									<img className='next' src='/next.png' alt='next'></img>
+								</Link>
+							</div>
 						</div>
 					</div>
 				</>
@@ -201,5 +203,4 @@ const Showproprietaire = () => {
 		</>
 	);
 };
-
 export default Showproprietaire;

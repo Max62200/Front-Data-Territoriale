@@ -67,7 +67,7 @@ const Showgerant = () => {
 											{' '}
 											Gérant COMMERCE
 										</Card.Header>
-										<Row className='text mb-2'>
+										<Row className=' mb-2'>
 											<Col className=' ml-1'>
 												<Card.Text className='label-nom5'>
 													<Form.Label className='label-color'>
