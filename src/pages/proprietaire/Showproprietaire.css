@@ -12,15 +12,41 @@
    margin-top: 10%;
 }
 
-
-
+.scroll-to-top{
+    width:150px;
+    height:150px;
+    margin-top: -8%;
+}
+.cb{
+    margin-top:10%;
+}
 .title-form{
-    font-size:35px;
+    font-size:28px;
     color: black;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 3.5%;
+    background-color: #A4A3A3;
+    border: 2px solid black;
 
+}
+
+.title-form3{
+    font-size:28px;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 3.5%;
+    background-color: #A4A3A3;
+
+}
+
+.bd{
+    border:2px solid black;
+}
+
+.mil{
+    margin: -1.5%;
 }
 
 .m5{
@@ -37,6 +63,9 @@
     
 }
 
+.img-next{
+    margin-bottom: -8%;
+}
 .label-color{
     color: black;
     font-weight: bold;
@@ -62,6 +91,44 @@
 
 }
 
+
+        
+.label-nom3{
+    color: rgb(68, 67, 67);
+    font-weight:600;
+    font-family:Roboto;
+    text-transform: uppercase;
+
+}
+
+    
+.label-nom4{
+    color: rgb(68, 67, 67);
+    font-weight:600;
+    font-family:Roboto;
+    text-transform: uppercase;
+
+}
+
+    
+.label-nom5{
+    color: rgb(68, 67, 67);
+    font-weight:600;
+    font-family:Roboto;
+    text-transform: uppercase;
+
+}
+
+    
+.label-nom7{
+    color: rgb(68, 67, 67);
+    font-weight:600;
+    font-family:Roboto;
+    text-transform: uppercase;
+
+}
+
+
 .a-color{
     text-decoration: underline;
     color: rgb(68, 67, 67);
@@ -73,6 +140,18 @@
 .text{
     margin-left:10%;
  }
+
+.df{
+    display: flex;
+    justify-content:space-between;
+}
+
+.df2{
+    display: flex;
+    justify-content:space-around;
+    margin-top: 5%;
+}
+
 
 @media screen and (max-width : 1500px) and (min-width : 851px){
     
@@ -111,6 +190,44 @@
 
     }
 
+    
+        
+    .label-nom3{
+        color: rgb(68, 67, 67);
+        font-weight:600;
+        font-family:Roboto;
+        text-transform: uppercase;
+
+    }
+
+        
+    .label-nom4{
+        color: rgb(68, 67, 67);
+        font-weight:600;
+        font-family:Roboto;
+        text-transform: uppercase;
+
+    }
+
+        
+    .label-nom5{
+        color: rgb(68, 67, 67);
+        font-weight:600;
+        font-family:Roboto;
+        text-transform: uppercase;
+
+    }
+
+        
+    .label-nom7{
+        color: rgb(68, 67, 67);
+        font-weight:600;
+        font-family:Roboto;
+        text-transform: uppercase;
+
+    }
+
+
     .label-color2{
         color: gray;
         font-weight: bold;
@@ -125,7 +242,10 @@
         margin-bottom: -11%;
     }
  
-
+    .scroll-to-top{
+        width:150px;
+        height:150px;
+    }
     
     
 }
@@ -175,6 +295,42 @@
 
     }
 
+        
+    .label-nom3{
+        color: rgb(68, 67, 67);
+        font-weight:600;
+        font-family:Roboto;
+        text-transform: uppercase;
+
+    }
+
+        
+    .label-nom4{
+        color: rgb(68, 67, 67);
+        font-weight:600;
+        font-family:Roboto;
+        text-transform: uppercase;
+
+    }
+
+        
+    .label-nom5{
+        color: rgb(68, 67, 67);
+        font-weight:600;
+        font-family:Roboto;
+        text-transform: uppercase;
+
+    }
+
+        
+    .label-nom7{
+        color: rgb(68, 67, 67);
+        font-weight:600;
+        font-family:Roboto;
+        text-transform: uppercase;
+
+    }
+
     .label-color2{
         color: gray;
         font-weight: bold;
@@ -189,7 +345,10 @@
         margin-bottom: -12%;
     }
  
- 
+    .scroll-to-top{
+        width:150px;
+        height:150px;
+    }
 }
 
 
@@ -217,28 +376,81 @@
                 color: black;
                 font-weight: bolder;
                 font-family:Roboto;
-                font-size: 11px;
+                font-size: 10px;
                 text-transform: uppercase;
-
-               
+                margin: 1.5%;
+                
             }
             
             .label-nom{
                 color: rgb(68, 67, 67);
                 font-weight:700;
                 font-family:Roboto;
-                font-size: 11px;
+                font-size: 10px;
                 text-transform: uppercase;
+                margin: 0.5%;
+                height: 40px;
+                width: 80px;
+               
 
             }
 
+            .label-nom3{
+                color: rgb(68, 67, 67);
+                font-weight:700;
+                font-family:Roboto;
+                font-size: 10px;
+                text-transform: uppercase;
+                margin: 0.5%;
+             
+            }
+
             
+
+            .label-nom4{
+                color: rgb(68, 67, 67);
+                font-weight:700;
+                font-family:Roboto;
+                font-size: 10px;
+                text-transform: uppercase;
+                margin: 0.5%;
+                height: 42px;
+                width: 125px;
+               
+
+            }
+
+            .label-nom5{
+                color: rgb(68, 67, 67);
+                font-weight:700;
+                font-family:Roboto;
+                font-size: 10px;
+                text-transform: uppercase;
+                margin: 0.5%;
+                height: 55px;
+                width: 63px;
+               
+
+            }
+
+            .label-nom7{
+                color: rgb(68, 67, 67);
+                font-weight:700;
+                font-family:Roboto;
+                font-size: 10px;
+                text-transform: uppercase;
+                margin: 0.5%;
+               
+               
+
+            }
 .a-color{
     text-decoration: underline;
     color: rgb(68, 67, 67);
     font-weight:600;
     font-size:Roboto;
     font-size: 11px;
+  
 }
 
 .label-color2{
@@ -247,6 +459,7 @@
     font-family:Roboto;
     text-transform: uppercase;
     font-size:0.65rem;
+    margin: 0.5%;
 
 }
 
@@ -259,8 +472,14 @@
      margin-bottom: -10%;
  }
 
-.img-next{
-    width:50%;
+.next{
+    margin-left:50%;
+}
+
+.scroll-to-top{
+    width:150px;
+    height:150px;
+    
 }
     }
 

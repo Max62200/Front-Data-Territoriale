@@ -36,7 +36,19 @@
     font-family: Roboto;
     font-weight: bold;
     margin: 1.5%;
+    
 }
+
+.no-a2{
+    text-decoration: none;
+    font-size:22px;
+    color: rgb(110, 110, 110);
+    font-family: Roboto;
+    font-weight: bold;
+    margin: 1.5%;
+    width: 225px;
+}
+
 
 @media screen and (max-width : 575px) and (min-width : 300px){
 
@@ -77,6 +89,7 @@
         font-family: Roboto;
         font-weight: bold;
         margin: 1.5%;
+
     }
     
     .cardB{

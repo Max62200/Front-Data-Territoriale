@@ -1,11 +1,11 @@
 import { Card, Table, Row, Col, Button, Form, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './Showcommerce.css';
+import '../commerce/Showcommerce.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { timeParser } from '../components/Utils';
-import { dateTimeParser } from '../components/Utils';
+import { timeParser } from '../../components/Utils';
+import { dateTimeParser } from '../../components/Utils';
 
 const Showcommerce = () => {
 	const commerceId = useParams()?.id;
@@ -150,95 +150,97 @@ const Showcommerce = () => {
 				<>
 					<div className='btn-update'>
 						<Link to='/updatecommerce'>
-							<Button variant='outline-secondary' className='btn btn-sm'>
+							<Button variant='warning' className='btn btn-sm'>
 								Modifier Commerce
 							</Button>
 						</Link>
 					</div>
-					<Card>
-						<Card.Header className='title-form text-center'>
-							Commerce - {commerceData.nom}
+					<Card className='bd'>
+						<Card.Header className='title-form3 text-center'>
+							{commerceData.nom}
 						</Card.Header>
-						<Card.Body className=' mb-5'>
-							<Row className='m5 mb-5'>
-								<Col>
+						<Card.Body className='mb-5 '>
+							<Row className='mb-2'>
+								<Col className=' ml-1 cl-4'>
 									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>Nom : </Form.Label>{' '}
+										<Form.Label className='label-color'>Nom: </Form.Label>{' '}
 										{commerceData.nom}
 									</Card.Text>
 
 									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>Numero : </Form.Label>{' '}
+										<Form.Label className='label-color'>N°: </Form.Label>{' '}
 										{commerceData.numero}
 									</Card.Text>
 									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>Voie : </Form.Label>{' '}
+										<Form.Label className='label-color'>Voie: </Form.Label>{' '}
 										{commerceData.voie}
 									</Card.Text>
 									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>Rue : </Form.Label>{' '}
+										<Form.Label className='label-color'>Rue: </Form.Label>{' '}
 										{commerceData.rue}
 									</Card.Text>
 									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>
-											Complement :{' '}
-										</Form.Label>{' '}
+										<Form.Label className='label-color'>Cplt: </Form.Label>{' '}
 										{commerceData.complement}
 									</Card.Text>
 								</Col>
-								<Col>
+								<Col className=' ml-1'>
 									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>Bis : </Form.Label>{' '}
+										<Form.Label className='label-color'>Bis: </Form.Label>{' '}
 										{commerceData.bis}
 									</Card.Text>
 
 									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>
-											Code Postal :{' '}
-										</Form.Label>{' '}
+										<Form.Label className='label-color'>CP: </Form.Label>{' '}
 										{commerceData.postale}
 									</Card.Text>
 									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>Ville : </Form.Label>{' '}
+										<Form.Label className='label-color'>Ville: </Form.Label>{' '}
 										{commerceData.ville}
 									</Card.Text>
 									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>Latitude : </Form.Label>{' '}
+										<Form.Label className='label-color'>Lat.: </Form.Label>{' '}
 										{commerceData.latitude}
 									</Card.Text>
 									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>
-											Longitude :{' '}
-										</Form.Label>{' '}
+										<Form.Label className='label-color'>Long.: </Form.Label>{' '}
 										{commerceData.longitude}
 									</Card.Text>
 								</Col>
-								<Col>
+								<Col className=' ml-1'>
+									<Card.Text className='label-nom'>
+										<Form.Label className='label-color'>Tel: </Form.Label> 0
+										{commerceData.telephone}
+									</Card.Text>
+									<Card.Text className='label-nom'>
+										<Form.Label className='label-color'>FAX: </Form.Label> 0
+										{commerceData.fax}
+									</Card.Text>
+									<Card.Text className='label-nom'>
+										<Form.Label className='label-color'>Type: </Form.Label>{' '}
+										{commerceData.typologie}
+									</Card.Text>{' '}
+									{commerceData.pmr == 0 && (
+										<Card.Text className='label-nom'>
+											<Form.Label className='label-color'>
+												PMR:{' NON '}
+											</Form.Label>{' '}
+											{commerceData.pmr}
+										</Card.Text>
+									)}
+									{commerceData.pmr == 1 && (
+										<Card.Text className='label-nom'>
+											<Form.Label className='label-color'>
+												PMR:{' OUI '}
+											</Form.Label>{' '}
+											{commerceData.pmr}
+										</Card.Text>
+									)}
 									<Card.Text>
-										<Form.Label className='label-color'>Email : </Form.Label>{' '}
+										<Form.Label className='label-color'>Email: </Form.Label>{' '}
 										<a className='a-color' href='mailto:'>
 											{commerceData.email}
 										</a>
-									</Card.Text>
-									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>
-											Telephone :{' '}
-										</Form.Label>{' '}
-										0{commerceData.telephone}
-									</Card.Text>
-									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>FAX : </Form.Label>{' '}
-										0{commerceData.fax}
-									</Card.Text>
-									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>Type : </Form.Label>{' '}
-										{commerceData.typologie}
-									</Card.Text>
-									<Card.Text className='label-nom'>
-										<Form.Label className='label-color'>
-											Accés PMR :{' '}
-										</Form.Label>{' '}
-										{commerceData.pmr}
 									</Card.Text>
 								</Col>
 							</Row>
@@ -253,7 +255,7 @@ const Showcommerce = () => {
 										<Card.Header className='title-form text-center'>
 											Horaires COMMERCE
 										</Card.Header>
-										<Card.Text className='label-nom'>
+										<Card.Text className='label-nom3'>
 											<Table responsive striped bordered hover>
 												<thead>
 													<tr>
@@ -404,34 +406,37 @@ const Showcommerce = () => {
 									<Card.Header className='title-form text-center'>
 										Informations COMMERCE
 									</Card.Header>
-
-									<Card.Text className='label-nom text-center'>
-										<Form.Label className='label-color'>Statut : </Form.Label>{' '}
-										{informationData.statut}
-									</Card.Text>
-									<Row className=' mb-5'>
-										<Col>
-											<Card.Text className='label-nom text-center'>
+									<div className='center'>
+										<Card.Text className='label-nom4 text-center'>
+											<Form.Label className='label-color'>
+												Statut :{' '}
+											</Form.Label>{' '}
+											{informationData.statut}
+										</Card.Text>
+									</div>
+									<Row className=' mb-2'>
+										<Col className=' ml-1'>
+											<Card.Text className='label-nom4 text-center'>
 												<Form.Label className='label-color'>
 													Date de création :{' '}
 												</Form.Label>{' '}
 												{dateTimeParser(informationData.datecrea)}
 											</Card.Text>
-											<Card.Text className='label-nom text-center'>
+											<Card.Text className='label-nom4 text-center'>
 												<Form.Label className='label-color'>
 													Siret :{' '}
 												</Form.Label>{' '}
 												{informationData.siret}
 											</Card.Text>
 										</Col>
-										<Col>
-											<Card.Text className='label-nom text-center'>
+										<Col className=' ml-1'>
+											<Card.Text className='label-nom4 text-center'>
 												<Form.Label className='label-color'>
 													Raison Sociale :{' '}
 												</Form.Label>{' '}
 												{informationData.raisonsociale}
 											</Card.Text>
-											<Card.Text className='label-nom text-center'>
+											<Card.Text className='label-nom4 text-center'>
 												<Form.Label className='label-color'>
 													Siren :{' '}
 												</Form.Label>{' '}
@@ -448,81 +453,81 @@ const Showcommerce = () => {
 										{' '}
 										Gérant COMMERCE
 									</Card.Header>
-									<Row className='text mb-5'>
-										<Col>
-											<Card.Text className='label-nom'>
+									<Row className='text mb-2'>
+										<Col className=' ml-1'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Nom :{' '}
+													Nom:{' '}
 												</Form.Label>{' '}
 												{gerantData.nom}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Prenom :{' '}
+													Prenom:{' '}
 												</Form.Label>{' '}
 												{gerantData.prenom}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Tel fixe :{' '}
+													Tel fixe:{' '}
 												</Form.Label>{' '}
 												0{gerantData.telfixe}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Tel port :{' '}
+													Tel port:{' '}
 												</Form.Label>{' '}
 												0{gerantData.telport}
 											</Card.Text>{' '}
 										</Col>
-										<Col>
-											<Card.Text className='label-nom'>
+										<Col className=' ml-1'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Numero :{' '}
+													N°:{' '}
 												</Form.Label>{' '}
 												{gerantData.numero}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Bis :{' '}
+													Bis:{' '}
 												</Form.Label>{' '}
 												{gerantData.bis}
 											</Card.Text>{' '}
 											<Card.Text>
 												<Form.Label className='label-color'>
-													Email :{' '}
+													Email:{' '}
 												</Form.Label>{' '}
 												<a className='a-color' href='mailto:'>
 													{gerantData.email}
 												</a>
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Voie :{' '}
+													Voie:{' '}
 												</Form.Label>{' '}
 												{gerantData.voie}
 											</Card.Text>{' '}
 										</Col>
-										<Col>
-											<Card.Text className='label-nom'>
+										<Col className=' ml-1'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Rue :{' '}
+													Rue:{' '}
 												</Form.Label>{' '}
 												{gerantData.rue}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Complement :{' '}
+													Cplt :{' '}
 												</Form.Label>{' '}
 												{gerantData.complement}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Ville :{' '}
 												</Form.Label>{' '}
 												{gerantData.ville}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													CP :{' '}
 												</Form.Label>{' '}
@@ -537,88 +542,88 @@ const Showcommerce = () => {
 									<Card.Header className='title-form text-center'>
 										Propriétaire COMMERCE
 									</Card.Header>
-									<Row className='text mb-5'>
-										<Col>
-											<Card.Text className='label-nom'>
+									<Row className='text mb-2'>
+										<Col className=' ml-1'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Nom :{' '}
+													Nom:{' '}
 												</Form.Label>{' '}
-												{proprietaireData.nom}
+												{gerantData.nom}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Prenom :{' '}
+													Prenom:{' '}
 												</Form.Label>{' '}
-												{proprietaireData.prenom}
+												{gerantData.prenom}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Tel fixe :{' '}
+													Tel fixe:{' '}
 												</Form.Label>{' '}
-												0{proprietaireData.telfixe}
+												0{gerantData.telfixe}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Tel port :{' '}
+													Tel port:{' '}
 												</Form.Label>{' '}
-												0{proprietaireData.telport}
+												0{gerantData.telport}
 											</Card.Text>{' '}
 										</Col>
-										<Col>
-											<Card.Text className='label-nom'>
+										<Col className=' ml-1'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Numero :{' '}
+													N°:{' '}
 												</Form.Label>{' '}
-												{proprietaireData.numero}
+												{gerantData.numero}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Bis :{' '}
+													Bis:{' '}
 												</Form.Label>{' '}
-												{proprietaireData.bis}
+												{gerantData.bis}
 											</Card.Text>{' '}
 											<Card.Text>
 												<Form.Label className='label-color'>
-													Email :{' '}
+													Email:{' '}
 												</Form.Label>{' '}
 												<a className='a-color' href='mailto:'>
-													{proprietaireData.email}
+													{gerantData.email}
 												</a>
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Voie :{' '}
+													Voie:{' '}
 												</Form.Label>{' '}
-												{proprietaireData.voie}
+												{gerantData.voie}
 											</Card.Text>{' '}
 										</Col>
-										<Col>
-											<Card.Text className='label-nom'>
+										<Col className=' ml-1'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Rue :{' '}
+													Rue:{' '}
 												</Form.Label>{' '}
-												{proprietaireData.rue}
+												{gerantData.rue}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
-													Complement :{' '}
+													Cplt :{' '}
 												</Form.Label>{' '}
-												{proprietaireData.complement}
+												{gerantData.complement}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Ville :{' '}
 												</Form.Label>{' '}
-												{proprietaireData.ville}
+												{gerantData.ville}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													CP :{' '}
 												</Form.Label>{' '}
-												{proprietaireData.postale}
+												{gerantData.postale}
 											</Card.Text>{' '}
 										</Col>
-									</Row>
+									</Row>{' '}
 								</>
 							)}
 
@@ -629,19 +634,19 @@ const Showcommerce = () => {
 									</Card.Header>
 									<Row className='text-center'>
 										<Col>
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom7'>
 												<Form.Label className='label-color'>
 													CA N-1 :
 												</Form.Label>{' '}
 												{comptabiliteData.can1}€
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom7'>
 												<Form.Label className='label-color'>
 													CA N-2 :
 												</Form.Label>{' '}
 												{comptabiliteData.can2}€
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom7'>
 												<Form.Label className='label-color'>
 													CA N-3 :
 												</Form.Label>{' '}
@@ -649,32 +654,42 @@ const Showcommerce = () => {
 											</Card.Text>{' '}
 										</Col>
 										<Col>
-											<Card.Text className='label-nom'>
-												<Form.Label className='label-color'>
-													Franchise :{' '}
-												</Form.Label>{' '}
-												{comptabiliteData.franchise}
-											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											{comptabiliteData.franchise == 0 && (
+												<Card.Text className='label-nom7'>
+													<Form.Label className='label-color'>
+														Franchise :{' NON '}
+													</Form.Label>{' '}
+													{comptabiliteData.franchise}
+												</Card.Text>
+											)}
+											{comptabiliteData.franchise == 1 && (
+												<Card.Text className='label-nom7'>
+													<Form.Label className='label-color'>
+														Franchise :{' OUI '}
+													</Form.Label>{' '}
+													{comptabiliteData.franchise}
+												</Card.Text>
+											)}
+											<Card.Text className='label-nom7'>
 												<Form.Label className='label-color'>
 													Employes :{' '}
 												</Form.Label>{' '}
 												{comptabiliteData.employe}
 											</Card.Text>{' '}
-											<Card.Text className='label-nom'>
+											<Card.Text className='label-nom7'>
 												<Form.Label className='label-color'>
 													Superficie :{' '}
 												</Form.Label>{' '}
 												{comptabiliteData.superficie} m²
 											</Card.Text>{' '}
 										</Col>
-									
+
 										<Card.Text className='mt-3 text-center'>
 											<Form.Label className='label-color'>
 												Commentaire:{' '}
 											</Form.Label>
 										</Card.Text>
-										<div className='label-nom text-center'>
+										<div className='label-nom7 text-center'>
 											{comptabiliteData.commentaire}{' '}
 										</div>
 									</Row>{' '}
@@ -682,17 +697,19 @@ const Showcommerce = () => {
 							)}
 						</Card.Body>
 					</Card>
-					<div className='right mg-6'>
-						<Link to='/'>
-							<img className='img-next' src='/next.png' alt='next'></img>
-						</Link>
-					</div>
-					<div className='scroll-to-top'>
-						{isVisible && (
-							<div onClick={scrollToTop} className='btn-top'>
-								<img className='img' src='/arrow.png' alt='arrow'></img>
-							</div>
-						)}
+					<div className='df'>
+						<div>
+							{isVisible && (
+								<div onClick={scrollToTop} className=''>
+									<img className='arrow' src='/arrow.png' alt='arrow'></img>
+								</div>
+							)}
+						</div>
+						<div className=''>
+							<Link to='/'>
+								<img className='next' src='/next.png' alt='next'></img>
+							</Link>
+						</div>
 					</div>
 				</>
 			) : (

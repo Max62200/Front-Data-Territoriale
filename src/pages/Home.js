@@ -1,82 +1,37 @@
-import { useState, useEffect } from 'react';
-import Card from '../components/Commerce/Card';
-import axios from 'axios';
 import './Home.css';
-import Pagination from 'react-bootstrap/Pagination';
-import { Container, Button } from 'react-bootstrap';
+import { Card, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-	const [commerceData, setCommerceData] = useState([]);
-
-	useEffect(() => {
-		const fetchCommerce = async () => {
-			const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/commerces`);
-
-			setCommerceData(res.data['hydra:member']);
-		};
-		fetchCommerce();
-	}, []);
-
-	const [isVisible, setIsVisible] = useState(false);
-
-	// Top: 0 takes us all the way back to the top of the page
-	// Behavior: smooth keeps it smooth!
-	const scrollToTop = () => {
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth',
-		});
-	};
-
-	useEffect(() => {
-		// Button is displayed after scrolling for 500 pixels
-		const toggleVisibility = () => {
-			if (window.pageYOffset > 500) {
-				setIsVisible(true);
-			} else {
-				setIsVisible(false);
-			}
-		};
-
-		window.addEventListener('scroll', toggleVisibility);
-
-		return () => window.removeEventListener('scroll', toggleVisibility);
-	}, []);
-
 	return (
 		<>
-			<h1>Liste des commerces</h1>
-			<div className='right'>
-				<Link to='/addcommerce'>
-					<Button variant='outline-secondary' className='btn btn-sm'>
-						Ajouter Commerce
-					</Button>
-				</Link>
-			</div>
-			{commerceData &&
-				commerceData.map((item, key) => {
-					return <Card commerceData={item} key={key} />;
-				})}
-			<Container>
-				<div className='center'>
-					<Pagination>
-						<Pagination.First />
-						<Pagination.Prev />
-						<Pagination.Item>{1}</Pagination.Item>
-
-						<Pagination.Next />
-						<Pagination.Last />
-					</Pagination>
+			<Container className='container1'>
+				<h1 className='H1'>MENU</h1>
+				<div className='card'>
+					<Card className='text-center m-4'>
+						<Card.Body className='cardB'>
+							<Card.Title className='write'></Card.Title>
+							<div className='d-grid gap-2'>
+								<Link to='/homeCommerce'>
+									<Button variant='primary' className='lg1' size='lg'>
+										COMMERCES
+									</Button>
+								</Link>
+								<Link to='/homegerant'>
+									<Button variant='secondary' className='lg1' size='lg'>
+										GERANTS
+									</Button>
+								</Link>
+								<Link to='/homeproprietaire'>
+									<Button variant='warning' className='lg1' size='lg'>
+										PROPRIETAIRES
+									</Button>
+								</Link>
+							</div>
+						</Card.Body>
+					</Card>
 				</div>
 			</Container>
-			<div className='scroll-to-top m-5'>
-				{isVisible && (
-					<div onClick={scrollToTop} className='btn-top'>
-						<img className='img' src='/arrow.png' alt='arrow'></img>
-					</div>
-				)}
-			</div>
 		</>
 	);
 };

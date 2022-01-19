@@ -1,4 +1,4 @@
-import './Updatecommerce.css';
+import '../commerce/Updatecommerce.css';
 import { Form, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
@@ -34,9 +34,9 @@ const Updatecommerce = () => {
 			<h1>Modifier un commerce</h1>
 
 			<form className='mg-5'>
-				<Card className='text-center'>
+				<Card className='text-center bd cardB'>
 					<Card.Header className='title-form2'>COMMERCE</Card.Header>
-					<Card.Body>
+					<Card.Body className=''>
 						<Row className='mg-1'>
 							<Col>
 								<Row>
@@ -669,7 +669,7 @@ const Updatecommerce = () => {
 								</div>
 								<div className='form-group size mt-2 mb-3'>
 									<Form.Label>Franchise</Form.Label>
-									<Form.Select>
+									<Form.Select className=' size'>
 										<option>oui</option>
 										<option>non</option>
 									</Form.Select>
@@ -693,18 +693,24 @@ const Updatecommerce = () => {
 					</Button>
 				</div>
 			</form>
-			<div className='right mg-6'>
-				<Link to='/'>
-					<img className='img-next' src='/next.png' alt='next'></img>
-				</Link>
-			</div>
-			<div className='scroll-to-top'>
-				{isVisible && (
-					<div onClick={scrollToTop} className='btn-top'>
-						<img className='img' src='/arrow.png' alt='arrow'></img>
+			<div className='df'> 
+						<div>
+							
+								{isVisible && (
+									<div onClick={scrollToTop} className=''>
+										<img className='arrow' src='/arrow.png' alt='arrow'></img>
+									</div>
+								)}
+							
+						</div>
+						<div>
+							
+								<Link to='/'>
+									<img className='next' src='/next.png' alt='next'></img>
+								</Link>
+						
+						</div>
 					</div>
-				)}
-			</div>
 		</div>
 	);
 };

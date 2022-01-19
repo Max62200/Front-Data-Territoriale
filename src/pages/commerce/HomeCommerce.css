@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,700;1,300;1,500;1,900&display=swap');
+
+body{
+    background-color: #A4A3A3;
+}
+.margin {
+    margin: 3%;
+    margin-left: 15%;
+    margin-right:15%
+}
+
+h1{
+    text-align: center;
+    font-family:Roboto;
+    text-transform: uppercase;
+    margin: 1%;
+}
+
+.center{
+    display: flex;
+    justify-content:center;
+}
+
+.right{
+    display: flex;
+    justify-content:right;
+    margin: 2%;
+}
+
+.btn-top{
+    display: flex;
+    justify-content: left;    
+    margin: 1%;
+    margin-top:-8%;
+}
+
+.btn-top:hover{
+    opacity: 0.6;
+    
+}
+
+.c1{
+    margin-top: 10%;
+}
+
+
+@media screen and (max-width : 1500px) and (min-width : 992px){
+    .right{
+        display: flex;
+        justify-content:right;
+        margin:7.5%;
+        
+    }
+
+    .c1{
+        margin-top: 20%;
+    }
+    
+  }
+  
+  @media screen and (max-width : 991px) and (min-width : 768px){
+    .right{
+        display: flex;
+        justify-content:right;
+        margin: 10%;
+    }
+    .c1{
+        margin-top: 25%;
+    }
+  }
+  
+  
+  @media screen and (max-width : 767px) and (min-width : 576px){
+    .right{
+        display: flex;
+        justify-content:right;
+        margin:15%;
+    }
+    .c1{
+        margin-top: 30%;
+    }
+  }
+  
+  
+  @media screen and (max-width : 575px) and (min-width : 300px){
+    .right{
+        display: flex;
+        justify-content:center;
+        margin-top: 25%;
+    }
+
+    .img{
+      width: 12.5%; 
+     justify-content:center;
+        
+    }
+    
+    .c1{
+        margin-top: 35%;
+    }
+    
+  }

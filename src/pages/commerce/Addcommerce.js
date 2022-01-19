@@ -1,4 +1,4 @@
-import './Addcommerce.css';
+import '../commerce/Addcommerce.css';
 import { Form, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
@@ -30,14 +30,14 @@ const Addcommerce = () => {
 		return () => window.removeEventListener('scroll', toggleVisibility);
 	}, []);
 	return (
-		<div className='mt5'>  
+		<div className='mt5'>
 			<h1>Ajouter un commerce</h1>
 
 			<form className=''>
-				<Card className='text-center '>
-					<Card.Header className='title-form2'>COMMERCE</Card.Header>
+				<Card className='text-center bd cardB'>
+					<Card.Header className='title-form3'>COMMERCE</Card.Header>
 					<Card.Body>
-					<Row className='mg-1'>
+						<Row className='mg-1'>
 							<Col>
 								<Row>
 									<Col className='mg-4'>
@@ -399,7 +399,7 @@ const Addcommerce = () => {
 						</Row>
 					</Card.Body>
 					<Card.Header className='title-form2'> Informations</Card.Header>
-					<Card.Body className='center' >
+					<Card.Body className='center'>
 						<div className='position'>
 							<div className=' mt-3'>
 								<div className='form-group'>
@@ -669,7 +669,7 @@ const Addcommerce = () => {
 								</div>
 								<div className='form-group size mt-2 mb-3'>
 									<Form.Label>Franchise</Form.Label>
-									<Form.Select>
+									<Form.Select className=' size'>
 										<option>oui</option>
 										<option>non</option>
 									</Form.Select>
@@ -688,22 +688,24 @@ const Addcommerce = () => {
 					</Card.Body>
 				</Card>
 				<div className='center'>
-					<Button variant='primary' className='btn btn-sm btn-block mt-4'>
+					<Button variant='warning' className='btn btn-sm btn-block mt-4'>
 						Ajouter Commerce
 					</Button>
 				</div>
 			</form>
-			<div className='right mg-6'>
-				<Link to='/'>
-					<img className='img-next' src='/next.png' alt='next'></img>
-				</Link>
-			</div>
-			<div className='scroll-to-top'>
-				{isVisible && (
-					<div onClick={scrollToTop} className='btn-top'>
-						<img className='img' src='/arrow.png' alt='arrow'></img>
-					</div>
-				)}
+			<div className='df'>
+				<div>
+					{isVisible && (
+						<div onClick={scrollToTop} className=''>
+							<img className='arrow' src='/arrow.png' alt='arrow'></img>
+						</div>
+					)}
+				</div>
+				<div>
+					<Link to='/'>
+						<img className='next' src='/next.png' alt='next'></img>
+					</Link>
+				</div>
 			</div>
 		</div>
 	);
