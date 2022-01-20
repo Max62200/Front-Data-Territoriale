@@ -4,38 +4,17 @@ import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
 const Addproprietaire = () => {
-	const [isVisible, setIsVisible] = useState(false);
-
-	// Top: 0 takes us all the way back to the top of the page
-	// Behavior: smooth keeps it smooth!
-	const scrollToTop = () => {
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth',
-		});
-	};
-
-	useEffect(() => {
-		// Button is displayed after scrolling for 500 pixels
-		const toggleVisibility = () => {
-			if (window.pageYOffset > 500) {
-				setIsVisible(true);
-			} else {
-				setIsVisible(false);
-			}
-		};
-
-		window.addEventListener('scroll', toggleVisibility);
-
-		return () => window.removeEventListener('scroll', toggleVisibility);
-	}, []);
 	return (
 		<div className='merg2'>
-			<h1>Ajouter un proprietaire</h1>
+			<div className='R23'>
+				<Link to='/'>
+					<img className='next' src='/next.png' alt='next'></img>
+				</Link>
+			</div>
+			<h1 className='H113'>Ajouter un proprietaire</h1>
 
 			<form className=''>
 				<Card className='text-center bd cardB'>
-										
 					<Card.Header className='title-form2'>Proprietaire</Card.Header>
 					<Card.Body>
 						<Row className='mg-1'>
@@ -88,14 +67,14 @@ const Addproprietaire = () => {
 									<input
 										type='text'
 										className='form-control size'
-										placeholder='Telephone Fixe'
+										placeholder='Tel Fixe'
 									/>
 								</div>
 								<div className='form-group'>
 									<input
 										type='text'
 										className='form-control size'
-										placeholder='Telephone Port'
+										placeholder='Tel Port'
 									/>
 								</div>
 								<div className='form-group'>
@@ -116,7 +95,7 @@ const Addproprietaire = () => {
 									<input
 										type='text'
 										className='form-control size'
-										placeholder='Complement'
+										placeholder='Cplmt'
 									/>
 								</div>
 								<div className='form-group'>
@@ -128,7 +107,6 @@ const Addproprietaire = () => {
 								</div>
 							</Col>
 						</Row>
-				
 					</Card.Body>
 				</Card>
 				<div className='center'>
@@ -137,20 +115,7 @@ const Addproprietaire = () => {
 					</Button>
 				</div>
 			</form>
-			<div className='df'>
-				<div>
-					{isVisible && (
-						<div onClick={scrollToTop} className=''>
-							<img className='arrow' src='/arrow.png' alt='arrow'></img>
-						</div>
-					)}
-				</div>
-				<div>
-					<Link to='/'>
-						<img className='next' src='/next.png' alt='next'></img>
-					</Link>
-				</div>
-			</div>
+
 		</div>
 	);
 };

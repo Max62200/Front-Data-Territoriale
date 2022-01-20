@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Homeproprietaire.css';
-import Card3 from '../../components/Proprietaire/Card';
+import Card3 from '../../components/Proprietaire/Card3';
 import Pagination from 'react-bootstrap/Pagination';
 import { Container, Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -72,13 +72,20 @@ const Homeproprietaire = () => {
 						</Pagination>
 					</div>
 				</Container>
-				<div className='scroll-to-top m-5'>
+				<div className='df'>
+				<div>
 					{isVisible && (
-						<div onClick={scrollToTop} className='btn-top'>
-							<img className='img' src='/arrow.png' alt='arrow'></img>
+						<div onClick={scrollToTop} className=''>
+							<img className='arrow' src='/arrow.png' alt='arrow'></img>
 						</div>
 					)}
 				</div>
+				<div>
+					<Link to='/'>
+						<img className='next' src='/next.png' alt='next'></img>
+					</Link>
+				</div>
+			</div>
 			</Container>
 		</>
 	);

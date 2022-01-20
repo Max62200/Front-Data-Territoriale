@@ -1,25 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,700;1,300;1,500;1,900&display=swap');
 
 
-.H1{
+.H112{
     text-align: center;
     font-family:Roboto;
     text-transform: uppercase;
     margin: 1%;
     margin-bottom: 3%;
+    margin-left: 10%;
 }
 
 
-.img-next{
+
+.R2{
     display: flex;
-    justify-content: right;    
-    margin-bottom: 3%;
-    
-    
+    justify-content: right;  
+    margin: 3%;
+    float: right;
+  
 }
 
 .cardB{
-    padding:1%
+    padding:1%;
+    margin-bottom:-15%;
 }
 
 .bd{
@@ -83,18 +86,7 @@
     }
     
     
-    .btn-top{
-        display: flex;
-        justify-content: left;    
-        margin: 1%;
-        margin-top:-8%;
-    }
-
-    
-    .scroll-to-top{
-        width:150px;
-        height:150px;
-    }
+   
     .merg2{
         margin-top:10%;
         margin-bottom: 5%;
@@ -173,6 +165,24 @@
 
 
     
+    }
+    .H112{
+        text-align: center;
+        font-family:Roboto;
+        text-transform: uppercase;
+        margin: 1%;
+        margin-bottom: 3%;
+        margin-left: 25%;
+    }
+    
+    
+    
+    .R2{
+        display: flex;
+        justify-content: right;  
+        margin: 3%;
+        float: right;
+      
     }
     
     

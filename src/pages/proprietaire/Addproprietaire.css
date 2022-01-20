@@ -1,15 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,700;1,300;1,500;1,900&display=swap');
 
 
-.H1{
+.H113{
     text-align: center;
     font-family:Roboto;
     text-transform: uppercase;
+    font-size: 50px;
     margin: 1%;
     margin-bottom: 3%;
+    margin-left: 15%;
 }
 
 
+
+.R23{
+    display: flex;
+    justify-content: right;  
+    margin: 3%;
+    float: right;
+  
+}
 .img-next{
     display: flex;
     justify-content: right;    
@@ -157,6 +167,19 @@
         font-size:20px;
     }
 
+    
+.H113{
+    text-align: center;
+    font-family:Roboto;
+    text-transform: uppercase;
+    font-size: 35px;
+    margin: 1%;
+    margin-bottom: 3%;
+    margin-left: 15%;
+}
+
+
+
 }
 
 
@@ -220,7 +243,15 @@
         margin-bottom: 3%;
        
     }
-
+    .H113{
+        text-align: center;
+        font-family:Roboto;
+        text-transform: uppercase;
+        font-size: 25px;
+        margin: 1%;
+        margin-bottom: 3%;
+        margin-left: 21%;
+    }
     
 }
 

@@ -9,7 +9,7 @@ const Home = () => {
 				<h1 className='H1'>MENU</h1>
 				<div className='card'>
 					<Card className='text-center m-4'>
-						<Card.Body className='cardB'>
+						<Card.Body className=''>
 							<Card.Title className='write'></Card.Title>
 							<div className='d-grid gap-2'>
 								<Link to='/homeCommerce'>

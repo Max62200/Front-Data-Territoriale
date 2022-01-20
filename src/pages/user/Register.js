@@ -1,6 +1,6 @@
 import './Register.css';
 import { Link } from 'react-router-dom';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 const Register = () => {
 	return (
@@ -47,16 +47,17 @@ const Register = () => {
 								<button type='submit' className='size btn btn-primary btn-block mt-4 '>
 									S'inscrire
 								</button>
-							</div>
+							
+							<Link to='/'>
+							<button className='size btn btn-secondary btn-block mt-4 '>
+								Retour
+							</button>
+						</Link></div>
 						</Card.Body>
 					</Card>
 				</form>
 			</div>
-			<div className='img-next2'>
-				<Link to='/'>
-					<img className='size2' src='/next.png' alt='next'></img>
-				</Link>
-			</div>
+			
 		</div>
 	);
 };

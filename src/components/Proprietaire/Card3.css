@@ -8,7 +8,7 @@
 }
 
 .write{
-    font-size:25px;
+    font-size:21px;
     color: black;
     font-family: Roboto;
     text-transform: uppercase;
@@ -19,7 +19,7 @@
 
 
 .write2{
-    font-size:25px;
+    font-size:21px;
     color: rgb(110, 110, 110);
     font-family: Roboto;
     text-transform: uppercase;
@@ -31,12 +31,24 @@
 
 .no-a{
     text-decoration: none;
-    font-size:22px;
+    font-size:20px;
     color: rgb(110, 110, 110);
     font-family: Roboto;
     font-weight: bold;
     margin: 1.5%;
+    
 }
+
+.no-a2{
+    text-decoration: none;
+    font-size:20px;
+    color: rgb(110, 110, 110);
+    font-family: Roboto;
+    font-weight: bold;
+    margin: 1.5%;
+    width: 225px;
+}
+
 
 @media screen and (max-width : 575px) and (min-width : 300px){
 
@@ -47,9 +59,8 @@
         margin-bottom: 7%;
         box-shadow: 2px 2px 2px 2px rgb(160, 159, 159);
     }
-
-    .write{
-        font-size:18px;
+    .write9{
+        font-size:15px;
         color: black;
         font-family: Roboto;
         text-transform: uppercase;
@@ -59,8 +70,8 @@
     }
     
     
-    .write2{
-        font-size:15px;
+    .write29{
+        font-size:13px;
         color: rgb(110, 110, 110);
         font-family: Roboto;
         text-transform: uppercase;
@@ -70,9 +81,9 @@
     }
     
     
-    .no-a{
+    .no-a9{
         text-decoration: none;
-        font-size:15px;
+        font-size:13px;
         color: rgb(110, 110, 110);
         font-family: Roboto;
         font-weight: bold;

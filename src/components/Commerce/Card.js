@@ -9,7 +9,7 @@ const card = ({ commerceData }) => {
 	return (
 		<div className='card'>
 			<Card className='text-center m-4'>
-				<Card.Body className='cardB'> 
+				<Card.Body className=''> 
 					<Card.Title className='write'>{nom}</Card.Title>
 					<Row>
 						<Col>

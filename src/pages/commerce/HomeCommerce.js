@@ -71,13 +71,20 @@ const Home = () => {
 						</Pagination>
 					</div>
 				</Container>
-				<div className='scroll-to-top m-5'>
+				<div className='df'>
+				<div>
 					{isVisible && (
-						<div onClick={scrollToTop} className='btn-top'>
-							<img className='img' src='/arrow.png' alt='arrow'></img>
+						<div onClick={scrollToTop} className=''>
+							<img className='arrow' src='/arrow.png' alt='arrow'></img>
 						</div>
 					)}
 				</div>
+				<div>
+					<Link to='/'>
+						<img className='next' src='/next.png' alt='next'></img>
+					</Link>
+				</div>
+			</div>
 			</Container>
 		</>
 	);
