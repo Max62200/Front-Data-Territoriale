@@ -10,40 +10,69 @@ const Login = () => {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 
-	const handleLogin = () => {
+	// const handleLogin = () => {
 
-		const headers = new Headers();
-		headers.append('Content-Type', 'application/json');
+	// 	const headers = new Headers();
+	// 	headers.append('Content-Type', 'application/json');
 
-		const tokens = (username, password);
-		const options = {
-			method: 'POST',
-			mode: 'cors',
-			body: JSON.stringify({
-				username,
-				password,
-			}),
-			headers
-		};
+		
+	// 	const options = {
+	// 		method: 'POST',
+	// 		mode: 'cors',
+	// 		body: JSON.stringify({
+	// 			username,
+	// 			password,
+	// 		}),
+	// 		headers
+	// 	};
 
-		axios
-			.post(`${process.env.REACT_APP_API_URL}/api/users`, options, {
-				username: username ? username : null,
-				password: password ? password : null,
+	// 	axios
+	// 		.post(`${process.env.REACT_APP_API_URL}/api/login`, options, {
+	// 			username: username ? username : null,
+	// 			password: password ? password : null,
+	// 		})
+	// 		.then((res) => {
+	// 			console.log(res);const tokens = (res.token);	localStorage.setItem('tokens', JSON.stringify(tokens));
+
+	// 		})
+	// 		.catch((err) => console.log(err));
+
+		
+		
+	// };
+
+	class AuthService {
+		login(username, password) {
+		  return axios
+			.post('https://data-territoriale.herokuapp.com/api/login', {
+			  username,
+			  password
 			})
-			.then((res) => {
-				console.log(res);
-			})
-			.catch((err) => console.log(err));
+			.then(response => {
+			  if (response.data.accessToken) {
+				localStorage.setItem("user", JSON.stringify(response.data));
+			  }
+	  
+			  return response.data;
+			});
+		}
+	
+	
+	}	const user = JSON.parse(localStorage.getItem('user'));
 
-		localStorage.setItem('tokens', JSON.stringify(tokens));
-	};
+		if (user && user.accessToken) {
+		  // return { Authorization: 'Bearer ' + user.accessToken }; // for Spring Boot back-end
+		  return { 'x-access-token': user.accessToken };       // for Node.js Express back-end
+		} else {
+		  
+		
+	
 
 	return (
 <div className='Login'>
 	<Card className='card-log'>
 		<Card.Body>
-			<Form method='POST' onSubmit={handleLogin}>
+			<Form method='POST' onSubmit={AuthService}>
 				<Form.Group size='lg' className='form' controlId='email'>
 					<Form.Label>Email</Form.Label>
 					<Form.Control
@@ -71,5 +100,5 @@ const Login = () => {
 	</Card>
 </div>
 	);
-};
+}};
 export default Login;
