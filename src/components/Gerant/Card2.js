@@ -3,29 +3,29 @@ import { Link } from 'react-router-dom';
 import './Card2.css';
 
 const card2 = ({ gerantData }) => {
-	const { nom, prenom, telfixe, telport, email, id } = gerantData;
+	const { id } = gerantData;
 
 	return (
-		<div className='card'>
-			<Card className='text-center m-4'>
-				<Card.Body className='cardB'>
+		<div className=''>
+			<Card className='text-center bd m-4'>
+				<Card.Body className=''>
 					<Card.Title className='write22'>
-						{nom} {prenom}
+					{gerantData.nom ? gerantData.nom : 'N/A'} {gerantData.prenom ? gerantData.prenom : 'N/A'} 
 					</Card.Title>
 					<Row>
 						<Col>
-							<Card.Text className='write22'>0{telfixe}</Card.Text>
+							<Card.Text className='write22'>0{gerantData.telfixe ? gerantData.telfixe : 'N/A'} </Card.Text>
 						</Col>
 
 						<Col>
 							<Card.Text className='no-a22'>
 								<a className='no-a' href='mailto:'>
-									{email}
+								{gerantData.email ? gerantData.email : 'N/A'}
 								</a>
 							</Card.Text>
 						</Col>
 						<Col>
-							<Card.Text className='write22'> 0{telport}</Card.Text>
+							<Card.Text className='write22'> 0{gerantData.telport ? gerantData.telport : 'N/A'}</Card.Text>
 						</Col>
 					</Row>
 					<Link to={`/showgerant/${id}`}>

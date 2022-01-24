@@ -3,25 +3,26 @@ import { Link } from 'react-router-dom';
 import './Card.css';
 
 const card = ({ commerceData }) => {
-	
-	const { nom, typologie, telephone, email, id } = commerceData;
-	
+	const { id } = commerceData;
+
 	return (
-		<div className='card'>
-			<Card className='text-center m-4'>
-				<Card.Body className=''> 
-					<Card.Title className='write'>{nom}</Card.Title>
+		<div className=''>
+			<Card className='text-center m-4 bd'>
+				<Card.Body className=''>
+					<Card.Title className='write'> {commerceData.nom ? commerceData.nom : 'N/A'}</Card.Title>
 					<Row>
 						<Col>
-							<Card.Text className='write2'>0{telephone}</Card.Text>
+							<Card.Text className='write2'>
+								0{commerceData.telephone ? commerceData.telephone : 'N/A'}
+							</Card.Text>
 						</Col>
 						<Col>
-							<Card.Text className='write2'> {typologie}</Card.Text>
+							<Card.Text className='write2'> {commerceData.typologie ? commerceData.typologie : 'N/A'}</Card.Text>
 						</Col>
 						<Col>
-							<Card.Text className='no-a'>
+							<Card.Text className=''>
 								<a className='no-a' href='mailto:'>
-									{email}
+								{commerceData.email ? commerceData.email : 'N/A'}
 								</a>
 							</Card.Text>
 						</Col>

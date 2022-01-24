@@ -69,25 +69,25 @@ const Showproprietaire = () => {
 												<Form.Label className='label-color'>
 													Nom:{' '}
 												</Form.Label>{' '}
-												{proprietaireData.nom}
+												{proprietaireData.nom ? proprietaireData.nom : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Prenom:{' '}
 												</Form.Label>{' '}
-												{proprietaireData.prenom}
+												{proprietaireData.prenom ? proprietaireData.prenom : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Tel fixe:{' '}
 												</Form.Label>{' '}
-												0{proprietaireData.telfixe}
+												0{proprietaireData.telfixe ? proprietaireData.telfixe : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Tel port:{' '}
 												</Form.Label>{' '}
-												0{proprietaireData.telport}
+												0{proprietaireData.telport ? proprietaireData.telport : "N/A"}
 											</Card.Text>{' '}
 										</Col>
 										<Col className=' ml-1'>
@@ -95,27 +95,27 @@ const Showproprietaire = () => {
 												<Form.Label className='label-color'>
 													N°:{' '}
 												</Form.Label>{' '}
-												{proprietaireData.numero}
+												{proprietaireData.numero ? proprietaireData.numero : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Bis:{' '}
 												</Form.Label>{' '}
-												{proprietaireData.bis}
+												{proprietaireData.bis ? proprietaireData.bis : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text>
 												<Form.Label className='label-color'>
 													Email:{' '}
 												</Form.Label>{' '}
 												<a className='a-color' href='mailto:'>
-													{proprietaireData.email}
+													{proprietaireData.email ? proprietaireData.email : "N/A"}
 												</a>
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Voie:{' '}
 												</Form.Label>{' '}
-												{proprietaireData.voie}
+												{proprietaireData.voie ? proprietaireData.voie : "N/A"}
 											</Card.Text>{' '}
 										</Col>
 										<Col className=' ml-1'>
@@ -123,31 +123,31 @@ const Showproprietaire = () => {
 												<Form.Label className='label-color'>
 													Rue:{' '}
 												</Form.Label>{' '}
-												{proprietaireData.rue}
+												{proprietaireData.rue ? proprietaireData.rue : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Cplt :{' '}
 												</Form.Label>{' '}
-												{proprietaireData.complement}
+												{proprietaireData.complement ? proprietaireData.complement : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Ville :{' '}
 												</Form.Label>{' '}
-												{proprietaireData.ville}
+												{proprietaireData.ville ? proprietaireData.ville : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													CP :{' '}
 												</Form.Label>{' '}
-												{proprietaireData.postale}
+												{proprietaireData.postale ? proprietaireData.postale : "N/A"}
 											</Card.Text>{' '}
 										</Col>
 									</Row>{' '}
 									<div className='df2'>
 										<div>
-											<Link to='/updateproprietaire'>
+											<Link to={`/updateproprietaire/${proprietaireId}`}>
 												<Button variant='warning' className='btn btn-sm'>
 													Modifier 
 												</Button>

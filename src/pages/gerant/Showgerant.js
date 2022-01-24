@@ -11,10 +11,7 @@ const Showgerant = () => {
 	const gerantId = useParams()?.id;
 	const [gerantData, setGerantData] = useState(null);
 
-	const [show, setShow] = useState(false);
-
-	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
+	const [setShow] = useState(false);
 
 	const [show2, setShow2] = useState(false);
 
@@ -73,25 +70,31 @@ const Showgerant = () => {
 													<Form.Label className='label-color'>
 														Nom:{' '}
 													</Form.Label>{' '}
-													{gerantData.nom}
+													{gerantData.nom ? gerantData.nom : 'N/A'}
 												</Card.Text>{' '}
 												<Card.Text className='label-nom5'>
 													<Form.Label className='label-color'>
 														Prenom:{' '}
 													</Form.Label>{' '}
-													{gerantData.prenom}
+													{gerantData.prenom ? gerantData.prenom : 'N/A'}
 												</Card.Text>{' '}
 												<Card.Text className='label-nom5'>
 													<Form.Label className='label-color'>
 														Tel fixe:{' '}
 													</Form.Label>{' '}
-													0{gerantData.telfixe}
+													0
+													{gerantData.telfixe
+														? gerantData.telfixe
+														: 'N/A'}
 												</Card.Text>{' '}
 												<Card.Text className='label-nom5'>
 													<Form.Label className='label-color'>
 														Tel port:{' '}
 													</Form.Label>{' '}
-													0{gerantData.telport}
+													0
+													{gerantData.telport
+														? gerantData.telport
+														: 'N/A'}
 												</Card.Text>{' '}
 											</Col>
 											<Col className=' ml-1'>
@@ -99,27 +102,29 @@ const Showgerant = () => {
 													<Form.Label className='label-color'>
 														N°:{' '}
 													</Form.Label>{' '}
-													{gerantData.numero}
+													{gerantData.numero ? gerantData.numero : 'N/A'}
 												</Card.Text>{' '}
 												<Card.Text className='label-nom5'>
 													<Form.Label className='label-color'>
 														Bis:{' '}
 													</Form.Label>{' '}
-													{gerantData.bis}
+													{gerantData.bis ? gerantData.bis : 'N/A'}
 												</Card.Text>{' '}
 												<Card.Text>
 													<Form.Label className='label-color'>
 														Email:{' '}
 													</Form.Label>{' '}
 													<a className='a-color' href='mailto:'>
-														{gerantData.email}
+														{gerantData.email
+															? gerantData.email
+															: 'N/A'}
 													</a>
 												</Card.Text>{' '}
 												<Card.Text className='label-nom5'>
 													<Form.Label className='label-color'>
 														Voie:{' '}
 													</Form.Label>{' '}
-													{gerantData.voie}
+													{gerantData.voie ? gerantData.voie : 'N/A'}
 												</Card.Text>{' '}
 											</Col>
 											<Col className=' ml-1'>
@@ -127,31 +132,35 @@ const Showgerant = () => {
 													<Form.Label className='label-color'>
 														Rue:{' '}
 													</Form.Label>{' '}
-													{gerantData.rue}
+													{gerantData.rue ? gerantData.rue : 'N/A'}
 												</Card.Text>{' '}
 												<Card.Text className='label-nom5'>
 													<Form.Label className='label-color'>
 														Cplt :{' '}
 													</Form.Label>{' '}
-													{gerantData.complement}
+													{gerantData.complement
+														? gerantData.complement
+														: 'N/A'}
 												</Card.Text>{' '}
 												<Card.Text className='label-nom5'>
 													<Form.Label className='label-color'>
 														Ville :{' '}
 													</Form.Label>{' '}
-													{gerantData.ville}
+													{gerantData.ville ? gerantData.ville : 'N/A'}
 												</Card.Text>{' '}
 												<Card.Text className='label-nom5'>
 													<Form.Label className='label-color'>
 														CP :{' '}
 													</Form.Label>{' '}
-													{gerantData.postale}
+													{gerantData.postale
+														? gerantData.postale
+														: 'N/A'}
 												</Card.Text>{' '}
 											</Col>
 										</Row>{' '}
 										<div className='df2'>
 											<div>
-												<Link to='/updategerant'>
+												<Link to={`/updategerant/${gerantId}`}>
 													<Button
 														variant='warning'
 														className='btn btn-sm'>

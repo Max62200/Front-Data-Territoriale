@@ -168,61 +168,61 @@ const Showcommerce = () => {
 								<Col className=' ml-1 cl-4'>
 									<Card.Text className='label-nom'>
 										<Form.Label className='label-color'>Nom: </Form.Label>{' '}
-										{commerceData.nom}
+										{commerceData.nom ? commerceData.nom : "N/A"}
 									</Card.Text>
 
 									<Card.Text className='label-nom'>
 										<Form.Label className='label-color'>N°: </Form.Label>{' '}
-										{commerceData.numero}
+										{commerceData.numero ? commerceData.numero : "N/A"}
 									</Card.Text>
 									<Card.Text className='label-nom'>
 										<Form.Label className='label-color'>Voie: </Form.Label>{' '}
-										{commerceData.voie}
+										{commerceData.voie ? commerceData.voie : "N/A"}
 									</Card.Text>
 									<Card.Text className='label-nom'>
 										<Form.Label className='label-color'>Rue: </Form.Label>{' '}
-										{commerceData.rue}
+										{commerceData.rue ? commerceData.rue : "N/A"}
 									</Card.Text>
 									<Card.Text className='label-nom'>
 										<Form.Label className='label-color'>Cplt: </Form.Label>{' '}
-										{commerceData.complement}
+										{commerceData.complement ? commerceData.complement : "N/A"}
 									</Card.Text>
 								</Col>
 								<Col className=' ml-1'>
 									<Card.Text className='label-nom'>
 										<Form.Label className='label-color'>Bis: </Form.Label>{' '}
-										{commerceData.bis}
+										{commerceData.bis ? commerceData.bis : "N/A"}
 									</Card.Text>
 
 									<Card.Text className='label-nom'>
 										<Form.Label className='label-color'>CP: </Form.Label>{' '}
-										{commerceData.postale}
+										{commerceData.postale ? commerceData.postale : "N/A"}
 									</Card.Text>
 									<Card.Text className='label-nom'>
 										<Form.Label className='label-color'>Ville: </Form.Label>{' '}
-										{commerceData.ville}
+										{commerceData.ville ? commerceData.ville : "N/A"}
 									</Card.Text>
 									<Card.Text className='label-nom'>
 										<Form.Label className='label-color'>Lat.: </Form.Label>{' '}
-										{commerceData.latitude}
+										{commerceData.latitude ? commerceData.latitude : "N/A"}
 									</Card.Text>
 									<Card.Text className='label-nom'>
 										<Form.Label className='label-color'>Long.: </Form.Label>{' '}
-										{commerceData.longitude}
+										{commerceData.longitude ? commerceData.longitude : "N/A"}
 									</Card.Text>
 								</Col>
 								<Col className=' ml-1'>
 									<Card.Text className='label-nom'>
 										<Form.Label className='label-color'>Tel: </Form.Label> 0
-										{commerceData.telephone}
+										{commerceData.telephone ? commerceData.telephone : "N/A"}
 									</Card.Text>
 									<Card.Text className='label-nom'>
 										<Form.Label className='label-color'>FAX: </Form.Label> 0
-										{commerceData.fax}
+										{commerceData.fax ? commerceData.fax : "N/A"}
 									</Card.Text>
 									<Card.Text className='label-nom'>
 										<Form.Label className='label-color'>Type: </Form.Label>{' '}
-										{commerceData.typologie}
+										{commerceData.typologie ? commerceData.typologie : "N/A"}
 									</Card.Text>{' '}
 									{commerceData.pmr == 0 && (
 										<Card.Text className='label-nom'>
@@ -243,7 +243,7 @@ const Showcommerce = () => {
 									<Card.Text>
 										<Form.Label className='label-color'>Email: </Form.Label>{' '}
 										<a className='a-color' href='mailto:'>
-											{commerceData.email}
+											{commerceData.email ? commerceData.email : "N/A"}
 										</a>
 									</Card.Text>
 								</Col>
@@ -415,7 +415,7 @@ const Showcommerce = () => {
 											<Form.Label className='label-color'>
 												Statut :{' '}
 											</Form.Label>{' '}
-											{informationData.statut}
+											{informationData.statut ? informationData.statut : "N/A"}
 										</Card.Text>
 									</div>
 									<Row className=' mb-2'>
@@ -430,7 +430,7 @@ const Showcommerce = () => {
 												<Form.Label className='label-color'>
 													Siret :{' '}
 												</Form.Label>{' '}
-												{informationData.siret}
+												{informationData.siret ? informationData.siret : "N/A"}
 											</Card.Text>
 										</Col>
 										<Col className=' ml-1'>
@@ -438,13 +438,13 @@ const Showcommerce = () => {
 												<Form.Label className='label-color'>
 													Raison Sociale :{' '}
 												</Form.Label>{' '}
-												{informationData.raisonsociale}
+												{informationData.raisonsociale ? informationData.raisonsociale : "N/A"}
 											</Card.Text>
 											<Card.Text className='label-nom4 text-center'>
 												<Form.Label className='label-color'>
 													Siren :{' '}
 												</Form.Label>{' '}
-												{informationData.siren}
+												{informationData.siren ? informationData.siren : "N/A"}
 											</Card.Text>{' '}
 										</Col>
 									</Row>
@@ -463,25 +463,25 @@ const Showcommerce = () => {
 												<Form.Label className='label-color'>
 													Nom:{' '}
 												</Form.Label>{' '}
-												{gerantData.nom}
+												{gerantData.nom ? gerantData.nom : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Prenom:{' '}
 												</Form.Label>{' '}
-												{gerantData.prenom}
+												{gerantData.prenom ? gerantData.prenom : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Tel fixe:{' '}
 												</Form.Label>{' '}
-												0{gerantData.telfixe}
+												0{gerantData.telfixe ? gerantData.telfixe : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Tel port:{' '}
 												</Form.Label>{' '}
-												0{gerantData.telport}
+												0{gerantData.telport ? gerantData.telport : "N/A"}
 											</Card.Text>{' '}
 										</Col>
 										<Col className=' ml-1'>
@@ -489,27 +489,27 @@ const Showcommerce = () => {
 												<Form.Label className='label-color'>
 													N°:{' '}
 												</Form.Label>{' '}
-												{gerantData.numero}
+												{gerantData.numero ? gerantData.numero : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Bis:{' '}
 												</Form.Label>{' '}
-												{gerantData.bis}
+												{gerantData.bis ? gerantData.bis : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text>
 												<Form.Label className='label-color'>
 													Email:{' '}
 												</Form.Label>{' '}
 												<a className='a-color' href='mailto:'>
-													{gerantData.email}
+													{gerantData.email ? gerantData.email : "N/A"}
 												</a>
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Voie:{' '}
 												</Form.Label>{' '}
-												{gerantData.voie}
+												{gerantData.voie ? gerantData.voie : "N/A"}
 											</Card.Text>{' '}
 										</Col>
 										<Col className=' ml-1'>
@@ -517,25 +517,25 @@ const Showcommerce = () => {
 												<Form.Label className='label-color'>
 													Rue:{' '}
 												</Form.Label>{' '}
-												{gerantData.rue}
+												{gerantData.rue ? gerantData.rue : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Cplt :{' '}
 												</Form.Label>{' '}
-												{gerantData.complement}
+												{gerantData.complement ? gerantData.complement : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Ville :{' '}
 												</Form.Label>{' '}
-												{gerantData.ville}
+												{gerantData.ville ? gerantData.ville : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													CP :{' '}
 												</Form.Label>{' '}
-												{gerantData.postale}
+												{gerantData.postale ? gerantData.postale : "N/A"}
 											</Card.Text>{' '}
 										</Col>
 									</Row>{' '}
@@ -552,25 +552,26 @@ const Showcommerce = () => {
 												<Form.Label className='label-color'>
 													Nom:{' '}
 												</Form.Label>{' '}
-												{gerantData.nom}
+												{proprietaireData.nom ? proprietaireData.nom : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Prenom:{' '}
 												</Form.Label>{' '}
-												{gerantData.prenom}
+												{proprietaireData.prenom ? proprietaireData.prenom : "N/A"}
+
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Tel fixe:{' '}
 												</Form.Label>{' '}
-												0{gerantData.telfixe}
+												0{proprietaireData.telfixe ? proprietaireData.telfixe : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Tel port:{' '}
 												</Form.Label>{' '}
-												0{gerantData.telport}
+												0{proprietaireData.telport ? proprietaireData.telport : "N/A"}
 											</Card.Text>{' '}
 										</Col>
 										<Col className=' ml-1'>
@@ -578,27 +579,27 @@ const Showcommerce = () => {
 												<Form.Label className='label-color'>
 													N°:{' '}
 												</Form.Label>{' '}
-												{gerantData.numero}
+												{proprietaireData.numero ? proprietaireData.numero : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Bis:{' '}
 												</Form.Label>{' '}
-												{gerantData.bis}
+												{proprietaireData.bis ? proprietaireData.bis : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text>
 												<Form.Label className='label-color'>
 													Email:{' '}
 												</Form.Label>{' '}
 												<a className='a-color' href='mailto:'>
-													{gerantData.email}
+												{proprietaireData.email ? proprietaireData.email : "N/A"}
 												</a>
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Voie:{' '}
 												</Form.Label>{' '}
-												{gerantData.voie}
+												{proprietaireData.voie ? proprietaireData.voie : "N/A"}
 											</Card.Text>{' '}
 										</Col>
 										<Col className=' ml-1'>
@@ -606,25 +607,25 @@ const Showcommerce = () => {
 												<Form.Label className='label-color'>
 													Rue:{' '}
 												</Form.Label>{' '}
-												{gerantData.rue}
+												{proprietaireData.rue ? proprietaireData.rue : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Cplt :{' '}
 												</Form.Label>{' '}
-												{gerantData.complement}
+												{proprietaireData.complement ? proprietaireData.complement : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													Ville :{' '}
 												</Form.Label>{' '}
-												{gerantData.ville}
+												{proprietaireData.ville ? proprietaireData.ville : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom5'>
 												<Form.Label className='label-color'>
 													CP :{' '}
 												</Form.Label>{' '}
-												{gerantData.postale}
+												{proprietaireData.postale ? proprietaireData.postale : "N/A"}
 											</Card.Text>{' '}
 										</Col>
 									</Row>{' '}
@@ -642,19 +643,19 @@ const Showcommerce = () => {
 												<Form.Label className='label-color'>
 													CA N-1 :
 												</Form.Label>{' '}
-												{comptabiliteData.can1}€
+												{comptabiliteData.can1 ? comptabiliteData.can1 : "N/A"}€
 											</Card.Text>{' '}
 											<Card.Text className='label-nom7'>
 												<Form.Label className='label-color'>
 													CA N-2 :
 												</Form.Label>{' '}
-												{comptabiliteData.can2}€
+												{comptabiliteData.can2 ? comptabiliteData.can2 : "N/A"}€
 											</Card.Text>{' '}
 											<Card.Text className='label-nom7'>
 												<Form.Label className='label-color'>
 													CA N-3 :
 												</Form.Label>{' '}
-												{comptabiliteData.can3}€{' '}
+												{comptabiliteData.can3 ? comptabiliteData.can3 : "N/A"}€
 											</Card.Text>{' '}
 										</Col>
 										<Col>
@@ -678,13 +679,13 @@ const Showcommerce = () => {
 												<Form.Label className='label-color'>
 													Employes :{' '}
 												</Form.Label>{' '}
-												{comptabiliteData.employe}
+												{comptabiliteData.employe ? comptabiliteData.employe : "N/A"}
 											</Card.Text>{' '}
 											<Card.Text className='label-nom7'>
 												<Form.Label className='label-color'>
 													Superficie :{' '}
 												</Form.Label>{' '}
-												{comptabiliteData.superficie} m²
+												{comptabiliteData.superficie ? comptabiliteData.superficie : "N/A"} m²
 											</Card.Text>{' '}
 										</Col>
 
@@ -694,7 +695,7 @@ const Showcommerce = () => {
 											</Form.Label>
 										</Card.Text>
 										<div className='label-nom7 text-center'>
-											{comptabiliteData.commentaire}{' '}
+											{comptabiliteData.commentaire ? comptabiliteData.commentaire : "N/A"}
 										</div>
 									</Row>{' '}
 								</>

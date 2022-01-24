@@ -22,6 +22,31 @@ body{
 	color:white;
 }
 
+
+/*<--- SCROLL BAR --> */
+
+html::-webkit-scrollbar 
+
+{
+  width: 0.8rem;
+  background-color:  white; 
+}
+
+html::-webkit-scrollbar-thumb 
+
+{
+    background:#212529; 
+}
+
+html 
+
+{
+  scrollbar-color: #212529 white ;
+  scrollbar-width: 0.8rem;
+}
+
+/*<--- SCROLL BAR --> */
+
   @media screen and (max-width : 991px) and (min-width : 768px){
     .lg1{
         width:75%;
@@ -42,6 +67,7 @@ body{
         margin-bottom: 10%;
         font-size: 40px;
     }
+    
   }
   
   

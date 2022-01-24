@@ -1,10 +1,105 @@
 import '../commerce/Addcommerce.css';
-import { Form, Row, Col, Card, Button } from 'react-bootstrap';
+import { Form, Row, Col, Card, Button, FloatingLabel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Addcommerce = () => {
 	const [isVisible, setIsVisible] = useState(false);
+
+	const [commerceName, setCommerceName] = useState('Exemple');
+	const [commerceNumber, setCommerceNumber] = useState(67);
+	const [commerceBis, setCommerceBis] = useState('bis');
+	const [commerceStreetType, setCommerceStreetType] = useState('rue');
+	const [commerceStreetName, setCommerceStreetName] = useState('michel jocking');
+	const [commerceComplement, setCommerceComplement] = useState('la bite');
+	const [commercePostalCode, setCommercePostalCode] = useState(62200);
+	const [commerceCity, setCommerceCity] = useState('Boulogne-sur-Mer');
+	const [commerceLatitude, setCommerceLatitude] = useState(1.254456);
+	const [commerceLongitude, setCommerceLongitude] = useState(123.58498463);
+	const [commerceEmail, setCommerceEmail] = useState('jocking_michel@gmail.com');
+	const [commercePhone, setCommercePhone] = useState();
+	const [commerceFax, setCommerceFax] = useState();
+	const [commerceTypology, setCommerceTypology] = useState('Alimentaire');
+	const [commercePmr, setCommercePmr] = useState(false);
+
+	const [infoDateCrea, setInfoDateCrea] = useState('2022-01-20T12:35:47.837Z');
+	const [infoRS, setInfoRS] = useState('exempleRS');
+	const [infoStatus, setInfoStatus] = useState('SARL');
+	const [infoSiret, setInfoSiret] = useState();
+	const [infoSiren, setInfoSiren] = useState();
+
+	const [managerFName, setManagerFName] = useState('Petty');
+	const [managerLName, setManagerLName] = useState('Florent');
+	const [managerEmail, setManagerEmail] = useState('Florent@lol.com');
+	const [managerBis, setManagerBis] = useState('Bis');
+	const [managerStreetType, setManagerStreetType] = useState('rue');
+	const [managerPhoneFix, setManagerPhoneFix] = useState();
+	const [managerPhonePort, setManagerPhonePort] = useState();
+	const [managerNumber, setManagerNumber] = useState(69);
+	const [managerStreet, setManagerStreet] = useState('du velours bleu');
+	const [managerComplement, setManagerComplement] = useState('du cul');
+	const [managerCP, setManagerCP] = useState(62230);
+	const [managerCity, setManagerCity] = useState('Paris');
+
+	const [ownerFName, setOwnerFName] = useState('Filou');
+	const [ownerLName, setOwnerLName] = useState('Mike');
+	const [ownerEmail, setOwnerEmail] = useState('mike@lol.com');
+	const [ownerBis, setOwnerBis] = useState('Bis');
+	const [ownerStreetType, setOwnerStreetType] = useState('avenue');
+	const [ownerCity, setOwnerCity] = useState('Bordeaux');
+	const [ownerPhoneFix, setOwnerPhoneFix] = useState();
+	const [ownerPhonePort, setOwnerPhonePort] = useState();
+	const [ownerNumber, setOwnerNumber] = useState(89);
+	const [ownerStreet, setOwnerStreet] = useState('du grand bleu');
+	const [ownerComplement, setOwnerComplement] = useState('du trou');
+	const [ownerCP, setOwnerCP] = useState(85420);
+
+	const [comptaCAN1, setComptaCAN1] = useState(12544.56);
+	const [comptaCAN2, setComptaCAN2] = useState(22544.56);
+	const [comptaCAN3, setComptaCAN3] = useState(32544.56);
+	const [comptaEmploy, setComptaEmploy] = useState(250);
+	const [comptaSup, setComptaSup] = useState(150.22);
+	const [comptaFranchise, setComptaFranchise] = useState(false);
+	const [comptaCom, setComptaCom] = useState('ceci est une comptabilité genial !!!');
+
+	const handleCommerce = (e) => {
+		e.preventDefault();
+
+		const token =
+			'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDI2NzcyMzcsImV4cCI6MTY0MjY4MDgzNywicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImRlbGFuc2F5LnNAZ21haWwuY29tIn0.N4ylBlgf3SXwT-LA0Aykk1bmLhI1vZxv1zDoVJJeXBWaYeia-5JQicOUJvVCqmnv5sX0nO9WNTZ0Pqz5MChlVKKlrbtauNJX8RT34DpXKaW-9XmDvCvaBW_9MXXGfW84qDRZfDui24uwJhWdKqkMVeIVchg8YSPt5cVOqqK7DdHQsm39khdFtVsGdh635jkqfj8YxJJlSBtFQUTPEmJ160fy-4JFhZH81QwROoaITkpXRcVoLtDK3F54xFYATJouuFmitdMuA-95VvgQWkQLW1m1-MmQZ_USCnJim8NXy1dCj09d7YlnPBfMV9vMy-tXRRfFpTSMwKAM99G-vLnq6Q';
+
+		axios
+			.post(
+				`${process.env.REACT_APP_API_URL}/api/commerces`,
+				{
+					nom: commerceName ? commerceName : null,
+					numero: commerceNumber ? Number(commerceNumber) : null,
+					bis: commerceBis ? commerceBis : null,
+					voie: commerceStreetType ? commerceStreetType : null,
+					rue: commerceStreetName ? commerceStreetName : null,
+					complement: commerceComplement ? commerceComplement : null,
+					postale: commercePostalCode ? Number(commercePostalCode) : null,
+					ville: commerceCity ? commerceCity : null,
+					latitude: commerceLatitude ? commerceLatitude : null,
+					longitude: commerceLongitude ? commerceLongitude : null,
+					email: commerceEmail ? commerceEmail : null,
+					telephone: commercePhone ? Number(commercePhone) : null,
+					fax: commerceFax ? Number(commerceFax) : null,
+					typologie: commerceTypology ? commerceTypology : null,
+					pmr: commercePmr,
+				},
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}
+			)
+			.then((res) => {
+				console.log(res);
+			})
+			.catch((err) => console.log(err));
+	};
 
 	// Top: 0 takes us all the way back to the top of the page
 	// Behavior: smooth keeps it smooth!
@@ -33,7 +128,7 @@ const Addcommerce = () => {
 		<div className='mt5'>
 			<h1>Ajouter un commerce</h1>
 
-			<form className=''>
+			<form method='POST' onSubmit={handleCommerce} className=''>
 				<Card className='text-center bd cardB'>
 					<Card.Header className='title-form3'>COMMERCE</Card.Header>
 					<Card.Body>
@@ -42,110 +137,210 @@ const Addcommerce = () => {
 								<Row>
 									<Col className='mg-4'>
 										<div className='form-group'>
-											<input
-												type='text'
-												className='form-control size'
-												placeholder='Nom'
-											/>
+											<FloatingLabel label='Nom' className='size'>
+												<input
+													type='text'
+													className='form-control size'
+													placeholder='Nom'
+													onChange={(e) =>
+														setCommerceName(e.target.value)
+													}
+													value={commerceName}
+												/>
+											</FloatingLabel>
 										</div>
+
 										<div className='form-group'>
-											<input
-												type='text'
-												className='form-control size'
-												placeholder='Numero'
-											/>
+											<FloatingLabel label='N°' className='size'>
+												<input
+													type='number'
+													className='form-control size'
+													placeholder='Numero'
+													onChange={(e) =>
+														setCommerceNumber(e.target.value)
+													}
+													value={commerceNumber}
+												/>{' '}
+											</FloatingLabel>
 										</div>
+
 										<div className='form-group'>
-											<input
-												type='text'
-												className='form-control size'
-												placeholder='bis'
-											/>
+											{' '}
+											<FloatingLabel label='Bis' className='size'>
+												<input
+													type='text'
+													className='form-control size'
+													placeholder='bis'
+													onChange={(e) => setCommerceBis(e.target.value)}
+													value={commerceBis}
+												/>{' '}
+											</FloatingLabel>
 										</div>
+
 										<div className='form-group'>
-											<input
-												type='text'
-												className='form-control size'
-												placeholder='voie'
-											/>
+											{' '}
+											<FloatingLabel label='Voie' className='size'>
+												<input
+													type='text'
+													className='form-control size'
+													placeholder='voie'
+													onChange={(e) =>
+														setCommerceStreetType(e.target.value)
+													}
+													value={commerceStreetType}
+												/>{' '}
+											</FloatingLabel>
 										</div>
+
 										<div className='form-group'>
-											<input
-												type='text'
-												className='form-control size'
-												placeholder='rue'
-											/>
+											<FloatingLabel label='Rue' className='size'>
+												<input
+													type='text'
+													className='form-control size'
+													placeholder='rue'
+													onChange={(e) =>
+														setCommerceStreetName(e.target.value)
+													}
+													value={commerceStreetName}
+												/>{' '}
+											</FloatingLabel>
 										</div>
+
 										<div className='form-group'>
-											<input
-												type='text'
-												className='form-control size'
-												placeholder='complement'
-											/>
+											<FloatingLabel label='Complement' className='size'>
+												<input
+													type='text'
+													className='form-control size'
+													placeholder='complement'
+													onChange={(e) =>
+														setCommerceComplement(e.target.value)
+													}
+													value={commerceComplement}
+												/>{' '}
+											</FloatingLabel>
 										</div>
+
 										<div className='form-group'>
-											<input
-												type='text'
-												className='form-control size'
-												placeholder='CP'
-											/>
+											<FloatingLabel label='C.P' className='size'>
+												<input
+													type='number'
+													className='form-control size'
+													placeholder='CP'
+													onChange={(e) =>
+														setCommercePostalCode(e.target.value)
+													}
+													value={commercePostalCode}
+												/>{' '}
+											</FloatingLabel>
 										</div>
+
 										<div className='form-group'>
-											<input
-												type='text'
-												className='form-control size'
-												placeholder='Ville'
-											/>
+											<FloatingLabel label='Ville' className='size'>
+												<input
+													type='text'
+													className='form-control size'
+													placeholder='Ville'
+													onChange={(e) =>
+														setCommerceCity(e.target.value)
+													}
+													value={commerceCity}
+												/>{' '}
+											</FloatingLabel>
 										</div>
 									</Col>
 									<Col className='mg-4'>
 										<div className='form-group'>
-											<input
-												type='text'
-												className='form-control size'
-												placeholder='Latitude'
-											/>
+											<FloatingLabel label='Latitude' className='size'>
+												<input
+													type='number'
+													step='0.01'
+													className='form-control size'
+													placeholder='Latitude'
+													onChange={(e) =>
+														setCommerceLatitude(e.target.value)
+													}
+													value={commerceLatitude}
+												/>{' '}
+											</FloatingLabel>
 										</div>
 										<div className='form-group'>
-											<input
-												type='text'
-												className='form-control size'
-												placeholder='Longitude'
-											/>
+											<FloatingLabel label='Longitude' className='size'>
+												<input
+													type='number'
+													step='0.01'
+													className='form-control size'
+													placeholder='Longitude'
+													onChange={(e) =>
+														setCommerceLongitude(e.target.value)
+													}
+													value={commerceLongitude}
+												/>
+											</FloatingLabel>
 										</div>
 										<div className='form-group'>
-											<input
-												type='email'
-												className='form-control size'
-												placeholder='email'
-											/>
+											<FloatingLabel label='Email' className='size'>
+												<input
+													type='email'
+													className='form-control size'
+													placeholder='email'
+													onChange={(e) =>
+														setCommerceEmail(e.target.value)
+													}
+													value={commerceEmail}
+												/>
+											</FloatingLabel>
 										</div>
 										<div className='form-group'>
-											<input
-												type='text'
-												className='form-control size'
-												placeholder='Telephone'
-											/>
+											<FloatingLabel label='Telephone' className='size'>
+												<input
+													type='text'
+													className='form-control size'
+													placeholder='Telephone'
+													onChange={(e) =>
+														setCommercePhone(e.target.value)
+													}
+													value={commercePhone}
+												/>
+											</FloatingLabel>
 										</div>
 										<div className='form-group'>
-											<input
-												type='text'
-												className='form-control size'
-												placeholder='FAX'
-											/>
+											<FloatingLabel label='FAX' className='size'>
+												<input
+													type='text'
+													className='form-control size'
+													placeholder='FAX'
+													onChange={(e) => setCommerceFax(e.target.value)}
+													value={commerceFax}
+												/>
+											</FloatingLabel>
 										</div>
 										<div className='form-group'>
-											<input
-												type='text'
-												className='form-control size'
-												placeholder='Typologie'
-											/>
+											<FloatingLabel label='Typologie' className='size'>
+												<input
+													type='text'
+													className='form-control size'
+													placeholder='Typologie'
+													onChange={(e) =>
+														setCommerceTypology(e.target.value)
+													}
+													value={commerceTypology}
+												/>
+											</FloatingLabel>
 										</div>
 										<div className='form-group size mt-3'>
 											<Form.Label>Accés PMR</Form.Label>
-											<Form.Select className='size'>
-												<option>oui</option>
-												<option>non</option>
+											<Form.Select
+												className='size'
+												onChange={(e) => {
+													if (e.target.value === 'true')
+														setCommercePmr(true);
+													else if (e.target.value === 'false')
+														setCommercePmr(false);
+													else setCommercePmr(false);
+												}}
+												defaultValue={commercePmr}>
+												<option value={true}>oui</option>
+												<option value={false}>non</option>
 											</Form.Select>
 										</div>
 									</Col>
@@ -399,43 +594,63 @@ const Addcommerce = () => {
 						</Row>
 					</Card.Body>
 					<Card.Header className='title-form2'> Informations</Card.Header>
-					<Card.Body className='center'>
+					<Card.Body className='center mb-2 mt-2'>
 						<div className='position'>
-							<div className=' mt-3'>
+							<div className=' '>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Date de Création'
-									/>
+									<FloatingLabel label='Date de création' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Date de Création'
+											onChange={(e) => setInfoDateCrea(e.target.value)}
+											value={infoDateCrea}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Raison Sociale'
-									/>
+									<FloatingLabel label='Raison Sociale' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Raison Sociale'
+											onChange={(e) => setInfoRS(e.target.value)}
+											value={infoRS}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Statut'
-									/>
+									<FloatingLabel label='Statut' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Statut'
+											onChange={(e) => setInfoStatus(e.target.value)}
+											value={infoStatus}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Siret'
-									/>
+									<FloatingLabel label='Siret' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Siret'
+											onChange={(e) => setInfoSiret(e.target.value)}
+											value={infoSiret}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Siren'
-									/>
+									<FloatingLabel label='Siren' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Siren'
+											onChange={(e) => setInfoSiren(e.target.value)}
+											value={infoSiren}
+										/>
+									</FloatingLabel>
 								</div>
 							</div>
 						</div>
@@ -445,90 +660,138 @@ const Addcommerce = () => {
 						<Row className='mg-1'>
 							<Col>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Nom'
-									/>
+									<FloatingLabel label='Nom' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Nom'
+											onChange={(e) => setManagerFName(e.target.value)}
+											value={managerFName}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Prenom'
-									/>
+									<FloatingLabel label='Prenom' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Prenom'
+											onChange={(e) => setManagerLName(e.target.value)}
+											value={managerLName}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Email'
-									/>
+									<FloatingLabel label='Email' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Email'
+											onChange={(e) => setManagerEmail(e.target.value)}
+											value={managerEmail}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Bis'
-									/>
+									<FloatingLabel label='Bis' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Bis'
+											onChange={(e) => setManagerBis(e.target.value)}
+											value={managerBis}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Voie'
-									/>
+									<FloatingLabel label='Voie' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Voie'
+											onChange={(e) => setManagerStreetType(e.target.value)}
+											value={managerStreetType}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Ville'
-									/>
+									<FloatingLabel label='Ville' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Ville'
+											onChange={(e) => setManagerCity(e.target.value)}
+											value={managerCity}
+										/>
+									</FloatingLabel>
 								</div>
 							</Col>
 							<Col>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Telephone Fixe'
-									/>
+									<FloatingLabel label='Tel. Fixe' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Tel Fixe'
+											onChange={(e) => setManagerPhoneFix(e.target.value)}
+											value={managerPhoneFix}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Telephone Port'
-									/>
+									<FloatingLabel label='Tel. Port' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Tel Port'
+											onChange={(e) => setManagerPhonePort(e.target.value)}
+											value={managerPhonePort}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Numero'
-									/>
+									<FloatingLabel label='N°' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Numero'
+											onChange={(e) => setManagerNumber(e.target.value)}
+											value={managerNumber}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Rue'
-									/>
+									<FloatingLabel label='Rue' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Rue'
+											onChange={(e) => setManagerStreet(e.target.value)}
+											value={managerStreet}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Complement'
-									/>
+									<FloatingLabel label='Complement' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Complement'
+											onChange={(e) => setManagerComplement(e.target.value)}
+											value={managerComplement}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='CP'
-									/>
+									<FloatingLabel label='CP' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='CP'
+											onChange={(e) => setManagerCP(e.target.value)}
+											value={managerCP}
+										/>
+									</FloatingLabel>
 								</div>
 							</Col>
 						</Row>
@@ -538,90 +801,138 @@ const Addcommerce = () => {
 						<Row className='mg-1'>
 							<Col>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Nom'
-									/>
+									<FloatingLabel label='Nom' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Nom'
+											onChange={(e) => setOwnerFName(e.target.value)}
+											value={ownerFName}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Prenom'
-									/>
+									<FloatingLabel label='Prenom' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Prenom'
+											onChange={(e) => setOwnerLName(e.target.value)}
+											value={ownerLName}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Email'
-									/>
+									<FloatingLabel label='Email' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Email'
+											onChange={(e) => setOwnerEmail(e.target.value)}
+											value={ownerEmail}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Bis'
-									/>
+									<FloatingLabel label='Bis' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Bis'
+											onChange={(e) => setOwnerBis(e.target.value)}
+											value={ownerBis}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Voie'
-									/>
+									<FloatingLabel label='Voie' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Voie'
+											onChange={(e) => setOwnerStreetType(e.target.value)}
+											value={ownerStreetType}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Ville'
-									/>
+									<FloatingLabel label='Ville' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Ville'
+											onChange={(e) => setOwnerCity(e.target.value)}
+											value={ownerCity}
+										/>
+									</FloatingLabel>
 								</div>
 							</Col>
 							<Col>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Telephone Fixe'
-									/>
+									<FloatingLabel label='Tel. Fixe' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Tel Fixe'
+											onChange={(e) => setOwnerPhoneFix(e.target.value)}
+											value={ownerPhoneFix}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Telephone Port'
-									/>
+									<FloatingLabel label='Tel. Port' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Tel Port'
+											onChange={(e) => setOwnerPhonePort(e.target.value)}
+											value={ownerPhonePort}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Numero'
-									/>
+									<FloatingLabel label='N°' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Numero'
+											onChange={(e) => setOwnerNumber(e.target.value)}
+											value={ownerNumber}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Rue'
-									/>
+									<FloatingLabel label='Rue' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Rue'
+											onChange={(e) => setOwnerStreet(e.target.value)}
+											value={ownerStreet}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Complement'
-									/>
+									<FloatingLabel label='Comeplement' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Complement'
+											onChange={(e) => setOwnerComplement(e.target.value)}
+											value={ownerComplement}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='CP'
-									/>
+									<FloatingLabel label='CP' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='CP'
+											onChange={(e) => setOwnerCP(e.target.value)}
+											value={ownerCP}
+										/>
+									</FloatingLabel>
 								</div>
 							</Col>
 						</Row>
@@ -631,64 +942,96 @@ const Addcommerce = () => {
 						<Row className='mg-1'>
 							<Col>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='C-A n1'
-									/>
+									<FloatingLabel label='CA N-1' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='C-A n1'
+											onChange={(e) => setComptaCAN1(e.target.value)}
+											value={comptaCAN1}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='C-A n2'
-									/>
+									<FloatingLabel label='CA N-2' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='C-A n2'
+											onChange={(e) => setComptaCAN2(e.target.value)}
+											value={comptaCAN2}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='C-A n3'
-									/>
+									<FloatingLabel label='CA N-3' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='C-A n3'
+											onChange={(e) => setComptaCAN3(e.target.value)}
+											value={comptaCAN3}
+										/>
+									</FloatingLabel>
 								</div>
 							</Col>
 							<Col>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Employés'
-									/>
+									<FloatingLabel label='Employés' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Employés'
+											onChange={(e) => setComptaEmploy(e.target.value)}
+											value={comptaEmploy}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group'>
-									<input
-										type='text'
-										className='form-control size'
-										placeholder='Superficie'
-									/>
+									<FloatingLabel label='Superficie' className='size'>
+										<input
+											type='text'
+											className='form-control size'
+											placeholder='Superficie'
+											onChange={(e) => setComptaSup(e.target.value)}
+											value={comptaSup}
+										/>
+									</FloatingLabel>
 								</div>
 								<div className='form-group size mt-2 mb-3'>
 									<Form.Label>Franchise</Form.Label>
-									<Form.Select className=' size'>
-										<option>oui</option>
-										<option>non</option>
+									<Form.Select
+										className='size'
+										onChange={(e) => {
+											if (e.target.value === 'true') setComptaFranchise(true);
+											else if (e.target.value === 'false')
+												setComptaFranchise(false);
+											else setComptaFranchise(false);
+										}}
+										defaultValue={comptaFranchise}>
+										<option value={true}>oui</option>
+										<option value={false}>non</option>
 									</Form.Select>
 								</div>
 							</Col>
 
 							<div className='form-group '>
-								<Form.Control
-									className='size'
-									as='textarea'
-									placeholder='Ecrivez un commentaire'
-									style={{ height: '150px' }}
-								/>
+								<FloatingLabel label='Commentaire' className='size'>
+									<Form.Control
+										className='size'
+										as='textarea'
+										placeholder='Ecrivez un commentaire'
+										style={{ height: '150px' }}
+										onChange={(e) => setComptaCom(e.target.value)}
+										value={comptaCom}
+									/>{' '}
+								</FloatingLabel>
 							</div>
 						</Row>
 					</Card.Body>
 				</Card>
 				<div className='center'>
-					<Button variant='warning' className='btn btn-sm btn-block mt-4'>
+					<Button type='submit' variant='warning' className='btn btn-sm btn-block mt-4'>
 						Ajouter Commerce
 					</Button>
 				</div>

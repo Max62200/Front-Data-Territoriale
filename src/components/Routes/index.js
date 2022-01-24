@@ -38,9 +38,9 @@ const index = () => {
 				<Route path='/updatecommerce' element={<Updatecommerce />} />
 				<Route path='/showgerant/:id' element={<Showgerant />} />
 				<Route path='/addgerant' element={<Addgerant />} />
-				<Route path='/updategerant' element={<Updategerant />} />
+				<Route path='/updategerant/:id' element={<Updategerant />} />
 				<Route path='/addproprietaire' element={<Addproprietaire />} />
-				<Route path='/updateproprietaire' element={<Updateproprietaire />} />
+				<Route path='/updateproprietaire/:id' element={<Updateproprietaire />} />
 				<Route path='/showproprietaire/:id' element={<Showproprietaire />} />
 				<Route path='/homeproprietaire' element={<Homeproprietaire />} />
 
